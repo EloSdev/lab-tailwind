@@ -63,6 +63,7 @@ y entrada en cascada.
 - C3.5 Con `prefers-reduced-motion: reduce` emulado, el sello no gira y no queda ninguna animación en marcha (`getAnimations().length === 0`) — `browser_evaluate` — brief §Movimiento, P7
 - C3.6 El sello es SVG con `textPath`, su texto es decorativo (`aria-hidden="true"`) y no tapa el contenido del hero a 360 — leer HTML + captura — brief §Detalle memorable, O8
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: Rendimiento 95 (LCP 2,9 s por la foto: falta `fetchpriority="high"`, JPG de 232 KB para un hueco de 520 px), CLS 0,031, sello a 8 px del borde a 360, autor de la foto sin identificar · Lighthouse a11y 100 / BP 100 / SEO 100 · T1, T2, T2b sin regresiones
+  · 2026-10-11 · ✅ PASA tras cambiar la foto (WebP 800×600, 155 KB, Łukasz Rawa / Unsplash, `fetchpriority="high"`) · Rendimiento 95 → 97, LCP 2,9 → 2,6 s, CLS 0,023 · queda: ~102 KiB de ahorro posible en la imagen (`srcset`/más compresión)
 
 ## T4 · Cómo funciona (3 pasos) — ⬜
 **Qué:** sección `#como-funciona` con 3 pasos (eliges → tostamos → te llega),
@@ -144,6 +145,7 @@ de accesibilidad y repaso final de todos los criterios del lab.
 - C10.4 Lighthouse Accesibilidad ≥ 90 y nota apuntada en el README — puerta 4 de `verify-task` + leer README — O8
 - C10.5 Si el README trae clases de ejemplo, `@source not "../README.md";` en el CSS — leer ficheros — CLAUDE.md
 - C10.7 README explica el D4: cuándo crear una utilidad en CSS y cuándo repetir clases, y por qué abusar de `@apply` es mala práctica; y las pegas de accesibilidad de la hamburguesa (D1) — leer `README.md` — D4, D1
+- C10.8 Créditos de imágenes en el README: foto del hero de Łukasz Rawa (https://unsplash.com/@lukasz_rawa · https://unsplash.com/photos/brown-coffee-beans-on-black-surface-fmc-tFMMiBs, Unsplash License) y las que se añadan en T5 — leer `README.md` — brief §Contenido
 - C10.6 Repaso de `criterios-lab.md`: O1–O9 PASA en la página completa — `verify-task` sobre el conjunto — O1–O9
 **Verificación:** —
 
