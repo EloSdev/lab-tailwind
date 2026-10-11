@@ -14,8 +14,16 @@
   <body class="bg-crema font-sans text-espresso-900">
     <header>
       <div class="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 md:px-8">
-        <a href="#" class="whitespace-nowrap font-display text-2xl font-extrabold tracking-tight rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-espresso-900">
-          <span aria-hidden="true">☕</span> tueste
+        <!-- Icono «coffee» de Lucide (lucide.dev), copiado tal cual; usa
+             currentColor, así que toma el color del texto. -->
+        <a href="#" class="inline-flex items-center gap-1.5 whitespace-nowrap font-display text-2xl font-extrabold tracking-tight rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-espresso-900">
+          <svg aria-hidden="true" class="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2v2" />
+            <path d="M14 2v2" />
+            <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+            <path d="M6 2v2" />
+          </svg>
+          tueste
         </a>
 
         <div class="flex items-center gap-2 md:gap-6">
@@ -61,9 +69,14 @@
             <a href="#planes" class="btn-pegatina px-6 py-3 text-lg bg-tomate-500 text-espresso-900">Suscríbete</a>
             <a href="#cafes" class="btn-pegatina px-6 py-3 text-lg bg-menta text-espresso-900">Ver cafés</a>
           </div>
+          <!-- El precio del plan Curioso (#planes), para no tener que bajar a buscarlo. -->
+          <p class="mt-4 text-espresso-700 motion-safe:animate-aparecer motion-safe:[animation-delay:300ms]">
+            Desde <strong class="font-bold text-espresso-900">12,90 €</strong> al mes, sin permanencia
+          </p>
         </div>
 
-        <!-- relative: ancla del sello, que va en la esquina de arriba a la derecha. -->
+        <!-- relative: ancla del sello (arriba a la derecha) y de la pegatina
+             «Tostado el lunes» (abajo a la izquierda, la esquina contraria). -->
         <div class="relative">
           <img
             src="/img/granos-tostados.webp"
@@ -74,13 +87,15 @@
             class="aspect-4/3 w-full object-cover border-2 border-espresso-900 shadow-pegatina rounded-2xl"
           />
 
+          <p class="pegatina absolute -bottom-4 left-4 -rotate-3 bg-menta">Tostado el lunes</p>
+
           <!-- Sello: fuera, dónde va y cuánto mide; dentro, la pegatina.
                El círculo y la taza se quedan quietos (con su sombra); solo
                gira el SVG del texto, para que la sombra no dé vueltas.
                overflow-hidden: al girar, las esquinas del cuadrado del SVG
                se salían del círculo y creaban scroll horizontal a 360 px. -->
           <div aria-hidden="true" class="absolute -top-8 -right-2 size-28 md:-right-6 md:size-36">
-            <div class="relative grid size-full place-items-center overflow-hidden text-3xl bg-tomate-500 border-2 border-espresso-900 shadow-pegatina rounded-full md:text-4xl">
+            <div class="relative grid size-full place-items-center overflow-hidden bg-tomate-500 border-2 border-espresso-900 shadow-pegatina rounded-full">
               <svg viewBox="0 0 100 100" class="absolute inset-0 size-full motion-safe:animate-girar">
                 <defs>
                   <path id="sello-circulo" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
@@ -89,7 +104,12 @@
                   <textPath href="#sello-circulo" textLength="230" lengthAdjust="spacing">Recién tostado · Recién tostado ·</textPath>
                 </text>
               </svg>
-              <span>☕</span>
+              <svg class="size-9 md:size-11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2v2" />
+                <path d="M14 2v2" />
+                <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+                <path d="M6 2v2" />
+              </svg>
             </div>
           </div>
         </div>
@@ -660,8 +680,14 @@
       <div class="mx-auto max-w-6xl px-4 pt-16 pb-8 md:px-8">
         <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <p class="font-display text-3xl font-extrabold tracking-tight">
-              <span aria-hidden="true">☕</span> tueste
+            <p class="flex items-center gap-2 font-display text-3xl font-extrabold tracking-tight">
+              <svg aria-hidden="true" class="size-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 2v2" />
+                <path d="M14 2v2" />
+                <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+                <path d="M6 2v2" />
+              </svg>
+              tueste
             </p>
             <p class="mt-4 max-w-xs text-espresso-200">
               Café de especialidad tostado cada semana y enviado a tu casa.

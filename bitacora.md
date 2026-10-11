@@ -457,3 +457,36 @@ después: 0 diferencias.
   versión del último commit y la nueva, y comparó 21 420 estilos calculados
   (en reposo, hover, active y foco, a 360/768/1440) y capturas píxel a píxel:
   0 diferencias.
+
+## 14 · R2 · Hero y marca (2026-10-11)
+
+### Prompt
+
+"Cambia el ☕ del logo (cabecera y pie) y del centro del sello por el icono
+`coffee` de Lucide, con `currentColor`. Añade una pegatina «Tostado el lunes»
+en la esquina de la foto contraria al sello y la línea «Desde 12,90 € al mes,
+sin permanencia» bajo los botones del hero. El logo tiene que seguir
+llamándose «tueste» para el lector de pantalla."
+
+### Qué me dio
+
+Los tres SVG, la pegatina (`pegatina absolute -bottom-4 left-4 -rotate-3
+bg-menta`, reutilizando la utilidad de R1) y la línea del precio, con el
+12,90 € en negrita y la misma entrada animada que los botones. Esta tarea
+la hizo el agente principal directamente, sin `tailwind-html`, porque eran
+cuatro cambios pequeños en `index.html`.
+
+### Qué corregí y por qué
+
+- **El icono, copiado del original y no de memoria**: tras lo del enlace
+  inventado de Unsplash en T3, el SVG se descargó del repositorio de Lucide
+  y la verificación comparó los 4 trazos uno a uno. Solo cambia el tamaño
+  (`size-7/8/9/11` en vez de `width/height="24"`).
+- El emoji tenía su tamaño por `text-3xl md:text-4xl` en el círculo del
+  sello; al quitarlo, esas clases ya no hacían nada y se quitaron también
+  (está dicho en la verificación, para que no parezca que se borró algo
+  para que pase).
+- El SVG del sello no lleva `aria-hidden` propio porque todo el sello ya lo
+  lleva. La verificación lo confirmó en el árbol de accesibilidad real de
+  Chrome. El snapshot del MCP de Playwright sí lo enseñaba, pero es una
+  rareza de esa herramienta.

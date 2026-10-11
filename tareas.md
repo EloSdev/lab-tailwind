@@ -153,7 +153,7 @@ del menú.
 - CR1.4 Sin cambio visual: capturas a 360 y 1440 equivalentes a las de antes del refactor — capturas — sin regresión
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» (summary, y ul del menú aceptado en CR1.3) · comparado con HEAD: 21 420 estilos calculados (reposo, hover, active, foco; 360/768/1440) con 0 diferencias y capturas de página completa con 0 píxeles distintos · 33/33 interactivos con foco visible · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · T1–T9 sin regresiones
 
-## R2 · Hero y marca (revisión 4, 6 y 3b) — ⬜
+## R2 · Hero y marca (revisión 4, 6 y 3b) — ✅
 **Qué:** el ☕ del logo (cabecera y pie) y del sello pasa a ser el icono
 Lucide `coffee` con `currentColor`; pegatina «Tostado el lunes» en la
 esquina contraria al sello; línea «Desde 12,90 € al mes, sin permanencia»
@@ -164,7 +164,7 @@ bajo los botones del hero.
 - CR2.2 Pegatina «Tostado el lunes» con `pegatina` en el bloque de la foto del hero, en la esquina contraria al sello; no tapa texto ni botones y no desborda a 360 / 768 / 1440 — `browser_evaluate` + capturas — brief §Dirección visual
 - CR2.3 Bajo los botones del hero, texto «Desde 12,90 € al mes, sin permanencia» (coherente con el plan Curioso) con contraste ≥ 4,5:1 — leer HTML + `sonda-pagina` — revisión 3, brief §Para quién
 - CR2.4 El nombre accesible del logo sigue siendo «tueste» (el icono no se lee) — árbol de accesibilidad — O8
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · 3 SVG con los 4 `d` idénticos al original de Lucide; ningún ☕ · pegatina sin solapes con sello ni texto a 360/768/1440 (10,46:1) · precio 9,96:1 · logo = `link "tueste"` · 0 contraste fallido, sin scroll horizontal, foco 12/12 + 11/11, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 92 (LCP 3,3 s) · T2, T3, T9 y R1 sin regresiones
 
 ## R3 · Bento sin huecos (revisión 1) — ⬜
 **Qué:** quitar `lg:auto-rows-fr`; Cuerpo con barras de intensidad por café;
