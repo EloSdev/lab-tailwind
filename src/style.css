@@ -324,7 +324,7 @@
   border-radius: 9999px;
   box-shadow: var(--shadow-pegatina);
 
-  @variant lg {
+  @variant xl {
     font-size: var(--text-xl);
   }
 }

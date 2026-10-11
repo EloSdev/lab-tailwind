@@ -522,3 +522,26 @@ agente principal directamente.
 - El verificador avisó de algo que el criterio no medía: a 1024 (justo al
   entrar en `lg`, columnas de 212px) Notas y Cuerpo quedan con ~6,5rem
   libres. Queda anotado en la verificación.
+
+## 16 · Arreglo de R3: el bento a 1024 (2026-10-11)
+
+### Prompt
+
+"Arregla lo de 1024." (El verificador de R3 había avisado de que a 1024,
+justo al entrar en `lg`, las 4 columnas medían 212px y Notas y Cuerpo se
+quedaban con ~6,5rem vacíos; el criterio solo medía 768 y 1440.)
+
+### Qué me dio
+
+El mosaico de 4 columnas, y los tamaños grandes de Notas, pasan de `lg:` a
+`xl:` (también el `@variant` de `nota-ejemplo`). De 1024 a 1279 se usa el
+de 2 columnas, que ya no dejaba huecos.
+
+### Qué corregí y por qué
+
+- Más que un cambio de código, fue un cambio en el plan: añadí el criterio
+  CR3.5 (medir también a 1024 y 1280) con fecha, para que el hueco no se
+  vuelva a colar en la próxima verificación. La lección: un criterio que
+  mide solo dos anchos deja sin mirar justo los puntos de ruptura, que es
+  donde las rejillas suelen fallar.
+- Coste aceptado: entre 1024 y 1279 el glosario es ~600px más largo.
