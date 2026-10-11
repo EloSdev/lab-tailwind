@@ -65,7 +65,7 @@ y entrada en cascada.
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: Rendimiento 95 (LCP 2,9 s por la foto: falta `fetchpriority="high"`, JPG de 232 KB para un hueco de 520 px), CLS 0,031, sello a 8 px del borde a 360, autor de la foto sin identificar · Lighthouse a11y 100 / BP 100 / SEO 100 · T1, T2, T2b sin regresiones
   · 2026-10-11 · ✅ PASA tras cambiar la foto (WebP 800×600, 155 KB, Łukasz Rawa / Unsplash, `fetchpriority="high"`) · Rendimiento 95 → 97, LCP 2,9 → 2,6 s, CLS 0,023 · queda: ~102 KiB de ahorro posible en la imagen (`srcset`/más compresión)
 
-## T4 · Cómo funciona (3 pasos) — ⬜
+## T4 · Cómo funciona (3 pasos) — ✅
 **Qué:** sección `#como-funciona` con 3 pasos (eliges → tostamos → te llega),
 icono Lucide, número y texto corto.
 **Depende de:** T1
@@ -74,7 +74,7 @@ icono Lucide, número y texto corto.
 - C4.2 Contenedor flex con `flexDirection` `column` a 360 y `row` a 1440 — `browser_evaluate` — O6
 - C4.3 Contenido de cada paso centrado (`alignItems`/`textAlign: center`) — `browser_evaluate` + captura — O6
 - C4.4 Iconos SVG inline decorativos con `aria-hidden="true"` (sin texto dentro de imágenes) — leer HTML — O8, brief §Contenido
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: pegatinas de número a < 3 px del borde a 360 (no se cortan, pero justas), `role="list"` sin probar en Safari/VoiceOver, 2 «>12 utilidades» heredados de T2 · `flexDirection` column/row/row a 360/768/1440, 3 pasos del mismo ancho y centrados · contraste mín. 5,37:1 (tomate) · Lighthouse a11y/BP/SEO 100, Rendimiento 97 · T1–T3 sin regresiones
 
 ## T5 · Cafés del mes (rejilla de tarjetas) — ⬜
 **Qué:** sección `#cafes` con ≥ 6 tarjetas `article`: foto, origen, proceso,

@@ -94,6 +94,71 @@
           </div>
         </div>
       </section>
+
+      <!-- Cómo funciona: va antes de los cafés (brief: primero explicar,
+           luego vender). Son pasos en orden → lista ordenada. -->
+      <section id="como-funciona" aria-labelledby="como-funciona-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
+        <h2 id="como-funciona-titulo" class="font-display text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
+          Tu café, en tres pasos y sin líos
+        </h2>
+        <p class="mt-4 max-w-xl text-lg text-espresso-700">
+          No hace falta saber de café. Si sabes encender tu cafetera, ya tienes
+          todo lo que necesitas.
+        </p>
+
+        <!-- list-none quita el número automático (ya va en la pegatina).
+             role="list": Safari deja de anunciar como lista un <ol> con
+             list-style: none; así lo recupera. -->
+        <ol role="list" class="mt-14 flex list-none flex-col gap-12 md:flex-row md:gap-8">
+          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-menta">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
+              <path d="M10 2v2" />
+              <path d="M14 2v2" />
+              <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+              <path d="M6 2v2" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">
+              <span class="paso-numero -rotate-6">1</span>
+              Eliges tu café
+            </h3>
+            <p class="mt-2">
+              Escoge el café del mes y dinos qué cafetera tienes: te lo mandamos
+              en grano o ya molido a su medida.
+            </p>
+          </li>
+
+          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-tomate-500">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
+              <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">
+              <span class="paso-numero rotate-3">2</span>
+              Lo tostamos esa semana
+            </h3>
+            <p class="mt-2">
+              En tandas pequeñas, para que te llegue fresco y huela a café de
+              verdad, no a estantería.
+            </p>
+          </li>
+
+          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-espresso-100">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
+              <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
+              <path d="M12 22V12" />
+              <polyline points="3.29 7 12 12 20.71 7" />
+              <path d="m7.5 4.27 9 5.15" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">
+              <span class="paso-numero -rotate-3">3</span>
+              Te llega a casa
+            </h3>
+            <p class="mt-2">
+              Cada mes, por correo. ¿Te vas de viaje o tienes de sobra? Lo pausas
+              o lo cancelas cuando quieras.
+            </p>
+          </li>
+        </ol>
+      </section>
     </main>
 
     <footer></footer>

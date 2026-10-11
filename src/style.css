@@ -102,3 +102,36 @@
     outline-offset: 4px;
   }
 }
+
+/* Tarjeta de paso de «Cómo funciona»: la forma de pegatina (borde, sombra
+   dura, esquinas) sin el efecto de aplastar, porque no se pulsa.
+   El layout (flex, centrado) y el color de fondo se quedan en el HTML.
+   relative: ancla del número, que asoma por la esquina. */
+@utility paso-tarjeta {
+  position: relative;
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-pegatina);
+}
+
+/* Número del paso como pegatina redonda pegada en la esquina de la tarjeta.
+   El giro se pone en el HTML (cada pegatina, torcida a su manera). */
+@utility paso-numero {
+  position: absolute;
+  top: calc(var(--spacing) * -5);
+  left: calc(var(--spacing) * -3);
+  display: grid;
+  place-items: center;
+  width: calc(var(--spacing) * 14);
+  height: calc(var(--spacing) * 14);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-espresso-900);
+  background-color: var(--color-crema);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-pegatina);
+}

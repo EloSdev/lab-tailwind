@@ -171,3 +171,36 @@ Titular «Café del bueno, sin postureo.»
   de 800×600 y 155 KB** (comparé 4 combinaciones de tamaño y calidad) y
   `fetchpriority="high"`: Rendimiento 95 → 97 y LCP 2,9 s → 2,6 s. También
   cambié el `alt`: el anterior decía «brillantes» y estos granos no lo son.
+
+## 6 · T4 · Cómo funciona (2026-10-11)
+
+### Prompt
+
+"Construye «Cómo funciona» después del hero: 3 pasos (eliges → tostamos →
+te llega) en `flex flex-col md:flex-row`, con el contenido centrado, icono
+de Lucide, número y texto corto. Las tarjetas no se pulsan: sin efecto de
+aplastar."
+
+### Qué me dio
+
+Una lista ordenada `<ol>` (son pasos en orden) con tres tarjetas de fondo
+menta, tomate y `espresso-100`, iconos de Lucide (`coffee`, `flame`,
+`package`) y el número como pegatina redonda girada en la esquina. Extrajo
+dos utilidades nuevas, `paso-tarjeta` y `paso-numero`, para no repetir más de
+12 clases en cada paso (cada `li` queda en 7 clases). Centrado con
+`flex flex-col items-center` (bloques) más `text-center` (líneas del texto).
+
+### Qué corregí y por qué
+
+- Al quitar los números automáticos con `list-none`, Safari deja de
+  anunciar el `<ol>` como lista. Se añadió `role="list"` para recuperarlo, y
+  el número se dejó como texto dentro del `h3` («1 Eliges tu café») para que
+  el orden se oiga también al navegar por encabezados.
+- En el texto de la tarjeta tomate se usó `espresso-900` y no
+  `espresso-700`, que sobre tomate no llegaría a 4,5:1 (medido: 5,37:1).
+- La verificación avisa de que las pegatinas de número quedan a menos de
+  3 px del borde de la pantalla a 360 px: no se cortan, pero si crece el
+  giro o el desplazamiento, la n.º 1 se saldría.
+- Primera tarea después de registrar el **hook `Stop`** del harness (build +
+  `check-estatico` al parar si hay cambios en `maquetacion_tueste/`). No está
+  comprobado que se ejecutara en esta sesión: puede activarse en la siguiente.
