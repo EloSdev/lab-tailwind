@@ -50,7 +50,7 @@ secundario «Ver cafés» tendrá otro). Quitar `ontouchstart=""` del `<body>`
 - C2b.4 El `<body>` no tiene `ontouchstart` — leer `index.html` — decisión del alumno
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: 2 «>12 utilidades» esperados (summary, ul), `:active` en iOS sin `ontouchstart` sin probar · botón de 19 a 5 clases, mismo resultado que T2 (5,37:1, hover −2 px / active +4 px, nada con reduced-motion) · Lighthouse 100/100/100 · T1 y T2 sin regresiones
 
-## T3 · Hero con sello giratorio — ⬜
+## T3 · Hero con sello giratorio — ✅
 **Qué:** `h1`, subtítulo, botón principal «Suscríbete» y secundario «Ver
 cafés», foto, sello SVG «Recién tostado ·» girando sobre la esquina de la foto
 y entrada en cascada.
@@ -62,7 +62,7 @@ y entrada en cascada.
 - C3.4 `--animate-girar` (o similar) y `--animate-aparecer` definidos en `@theme` con sus `@keyframes`; usados como `motion-safe:animate-*` — leer `src/style.css` + `check-estatico` — brief §Detalle memorable, P7
 - C3.5 Con `prefers-reduced-motion: reduce` emulado, el sello no gira y no queda ninguna animación en marcha (`getAnimations().length === 0`) — `browser_evaluate` — brief §Movimiento, P7
 - C3.6 El sello es SVG con `textPath`, su texto es decorativo (`aria-hidden="true"`) y no tapa el contenido del hero a 360 — leer HTML + captura — brief §Detalle memorable, O8
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: Rendimiento 95 (LCP 2,9 s por la foto: falta `fetchpriority="high"`, JPG de 232 KB para un hueco de 520 px), CLS 0,031, sello a 8 px del borde a 360, autor de la foto sin identificar · Lighthouse a11y 100 / BP 100 / SEO 100 · T1, T2, T2b sin regresiones
 
 ## T4 · Cómo funciona (3 pasos) — ⬜
 **Qué:** sección `#como-funciona` con 3 pasos (eliges → tostamos → te llega),

@@ -46,7 +46,53 @@
     </header>
 
     <main>
-      <h1 class="font-display text-5xl font-extrabold">Tueste</h1>
+      <!-- Hero: grid de 2 columnas desde md (texto | foto); en móvil, una. -->
+      <section aria-labelledby="hero-titulo" class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-12 md:grid-cols-2 md:px-8 md:py-20">
+        <div>
+          <h1 id="hero-titulo" class="font-display text-5xl leading-none font-extrabold tracking-tight motion-safe:animate-aparecer md:text-6xl lg:text-7xl">
+            Café del bueno, sin postureo.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg text-espresso-700 motion-safe:animate-aparecer motion-safe:[animation-delay:150ms]">
+            Cada mes te llega a casa un café de especialidad tostado esa misma
+            semana. En grano o molido para tu cafetera, y lo cancelas cuando
+            quieras.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4 motion-safe:animate-aparecer motion-safe:[animation-delay:300ms]">
+            <a href="#planes" class="btn-pegatina px-6 py-3 text-lg bg-tomate-500 text-espresso-900">Suscríbete</a>
+            <a href="#cafes" class="btn-pegatina px-6 py-3 text-lg bg-menta text-espresso-900">Ver cafés</a>
+          </div>
+        </div>
+
+        <!-- relative: ancla del sello, que va en la esquina de arriba a la derecha. -->
+        <div class="relative">
+          <img
+            src="/img/granos-tostados.jpg"
+            alt="Montón de granos de café recién tostados, marrones y brillantes, vistos desde arriba"
+            width="1200"
+            height="900"
+            class="aspect-4/3 w-full object-cover border-2 border-espresso-900 shadow-pegatina rounded-2xl"
+          />
+
+          <!-- Sello: fuera, dónde va y cuánto mide; dentro, la pegatina.
+               El círculo y la taza se quedan quietos (con su sombra); solo
+               gira el SVG del texto, para que la sombra no dé vueltas.
+               overflow-hidden: al girar, las esquinas del cuadrado del SVG
+               se salían del círculo y creaban scroll horizontal a 360 px. -->
+          <div aria-hidden="true" class="absolute -top-8 -right-2 size-28 md:-right-6 md:size-36">
+            <div class="relative grid size-full place-items-center overflow-hidden text-3xl bg-tomate-500 border-2 border-espresso-900 shadow-pegatina rounded-full md:text-4xl">
+              <svg viewBox="0 0 100 100" class="absolute inset-0 size-full motion-safe:animate-girar">
+                <defs>
+                  <path id="sello-circulo" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                </defs>
+                <text class="fill-espresso-900 font-display text-[11px] font-bold">
+                  <textPath href="#sello-circulo" textLength="230" lengthAdjust="spacing">Recién tostado · Recién tostado ·</textPath>
+                </text>
+              </svg>
+              <span>☕</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer></footer>

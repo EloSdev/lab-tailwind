@@ -130,3 +130,39 @@ transición, `:hover` dentro de `@media (hover: hover)`, `:active` y
   sombra y desplazamientos que en T2, también con reduced-motion). Solo
   cambia que ahora la transición anima `box-shadow` y `translate`, no los
   colores, porque el botón no cambia de color.
+
+## 5 · T3 · Hero con sello giratorio (2026-10-11)
+
+### Prompt
+
+"Construye el hero: `h1`, subtítulo con `max-w-xl`, «Suscríbete» y «Ver
+cafés» con `btn-pegatina`, una foto de Unsplash y un sello SVG «Recién
+tostado ·» que gire despacio en la esquina de la foto, con `motion-safe:`.
+Entrada en cascada con `animate-aparecer`."
+
+### Qué me dio
+
+Hero en **grid** (`md:grid-cols-2`): en móvil una columna sin clases extra,
+y desde `md` dos columnas iguales; con flex habría que cambiar la dirección y
+dar `basis-1/2` a cada hijo. Animaciones propias en `@theme`
+(`--animate-girar` 16 s, `--animate-aparecer` 0,6 s) con sus `@keyframes`.
+Titular «Café del bueno, sin postureo.»
+
+### Qué corregí y por qué
+
+- La primera versión del sello creaba **12 px de scroll horizontal a 360 px**:
+  al girar, las esquinas del cuadrado del SVG se salían del círculo. Se
+  arregló con `overflow-hidden` en el círculo (recorte local; la verificación
+  comprobó que sin él el scroll vuelve y que no esconde texto).
+- Si giraba el sello entero, la sombra dura daba vueltas con él. Ahora el
+  círculo y su sombra se quedan quietos y solo gira el SVG del texto.
+- El titular de ejemplo («Café recién tostado…») repetía las palabras del
+  sello que tiene al lado; se cambió.
+- La IA descartó una foto de un paquete porque se veía una marca real.
+- **La IA dio un enlace erróneo al autor de la foto**: usó el ID del fichero
+  de `images.unsplash.com` como si fuera el de la página
+  (`unsplash.com/photos/photo-…` → «Page not found»). El autor queda
+  pendiente de identificar o de cambiar la foto.
+- Lighthouse avisa de Rendimiento 95: la foto es un JPG de 232 KB para un
+  hueco de 520 px y le falta `fetchpriority="high"` (es la imagen más grande
+  de la primera pantalla). Pendiente si se va a por el D7.

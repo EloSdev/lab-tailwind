@@ -40,6 +40,27 @@
   /* La misma sombra, más larga: hover de lo que «se aplasta» (sube 2 px y
      la sombra crece 2 px, así la base parece quedarse en su sitio). */
   --shadow-pegatina-lg: 6px 6px 0 var(--color-espresso-900);
+
+  /* Movimiento del hero (brief §Movimiento). Se usan siempre con
+     motion-safe:, así con reduced-motion ni giran ni aparecen: se ven quietos. */
+  /* Sello: una vuelta cada 16 s, sin acelerones. */
+  --animate-girar: girar 16s linear infinite;
+  /* Entrada: sube 1rem mientras aparece. «both» mantiene el estado inicial
+     durante el retardo (no hay parpadeo) y el final al acabar. */
+  --animate-aparecer: aparecer 0.6s ease-out both;
+
+  @keyframes girar {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  }
 }
 
 /* Botón «pegatina» que se aplasta (brief §Detalle memorable).
