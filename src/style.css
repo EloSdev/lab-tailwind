@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Los .md del proyecto citan clases de ejemplo: que no ensucien el CSS. */
+@source not "../README.md";
+@source not "../brief.md";
+@source not "../tareas.md";
+@source not "../bitacora.md";
+
+@theme {
+  /* Paleta «Pegatina pop» (brief §Dirección visual).
+     Espresso: el tono base del brief (#2B1A12) es el 900; el resto de la
+     escala sale de él, aclarando hacia el crema. 500–700 para textos
+     secundarios y bordes suaves; 900 para texto y bordes de 2 px. */
+  --color-espresso-50: #fbf4ee;
+  --color-espresso-100: #f2e4d8;
+  --color-espresso-200: #e3c9b4;
+  --color-espresso-300: #cba68a;
+  --color-espresso-400: #a87f62;
+  --color-espresso-500: #85604a;
+  --color-espresso-600: #6a4936;
+  --color-espresso-700: #523727;
+  --color-espresso-800: #3d281c;
+  --color-espresso-900: #2b1a12; /* base de marca */
+  --color-espresso-950: #1c100a;
+
+  /* Acento tomate: solo como fondo (con texto espresso-900, nunca blanco).
+     600 = un punto más oscuro para el estado hover de los botones. */
+  --color-tomate-500: #ff5a36;
+  --color-tomate-600: #e8431f;
+
+  --color-crema: #fff4e0; /* fondo de la página */
+  --color-menta: #9ed9c3; /* solo fondos de pegatinas y bloques, no texto */
+
+  /* Tipografía: nombres exactos que exporta cada paquete @fontsource-variable. */
+  --font-display: "Bricolage Grotesque Variable", sans-serif;
+  --font-sans: "DM Sans Variable", system-ui, sans-serif;
+
+  /* Sombra dura de pegatina: desplazada y sin difuminado. */
+  --shadow-pegatina: 4px 4px 0 var(--color-espresso-900);
+}
