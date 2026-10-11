@@ -134,11 +134,90 @@ línea de copyright con borde superior.
 - C9.5 Existe un elemento con `id="newsletter"` (destino de los 3 botones de planes de T7) — `browser_evaluate` — T7
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: redes ficticias con `href="#"`, newsletter sin backend (el correo queda en la URL, sin confirmación) · pie 4 / 2×2 / 1 columnas a 1440 / 768 / 360, `#newsletter` es el destino de los planes, 33/33 interactivos con foco visible · franja crema de la captura a 360 descartada (artefacto de la captura: el pie llega al final) · iconos Lucide comparados: coinciden · unidades: px solo en bordes, sombras y outline · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · T1–T8 sin regresiones
 
+## Arreglos de la revisión de diseño (2026-10-11)
+
+> Salen del informe del agente `design-reviewer` (sin críticos; 6 importantes
+> y 4 sugerencias). El alumno eligió hacer los 10. Mismas reglas: tokens,
+> `rem` en letra y espaciados, `px` solo en bordes/sombras/outline.
+
+## R1 · Utilidades comunes y nombres (revisión 7) — ⬜
+**Qué:** refactor sin cambio visual. `paso-tarjeta` → `tarjeta-pegatina`;
+`@utility pegatina` con lo común de `cafe-proceso` y `plan-etiqueta` (la
+posición y el giro, en el HTML); `@utility menu-enlace` para los 3 enlaces
+del menú.
+**Depende de:** T2, T4–T9
+**Criterios:**
+- CR1.1 No queda ningún `paso-tarjeta`, `cafe-proceso` ni `plan-etiqueta` en `index.html` ni `src/style.css`; existen `tarjeta-pegatina`, `pegatina` y `menu-enlace` — leer ficheros — revisión 7
+- CR1.2 Las pegatinas de proceso (T5), «Más popular» (T7) y «1 correo al mes» (T9) siguen en la misma posición, giro y estilo (estilos calculados iguales que antes: `position`, `top/right/left`, `rotate`, `box-shadow`, `border`) — `browser_evaluate` + capturas — sin regresión
+- CR1.3 Los 3 enlaces del menú usan `menu-enlace` y ya no sale el aviso de «>12 utilidades» del `<ul>`; hover, active y foco iguales que en T2 — `check-estatico` + `sonda-foco` — tailwind-clases-limpias
+- CR1.4 Sin cambio visual: capturas a 360 y 1440 equivalentes a las de antes del refactor — capturas — sin regresión
+**Verificación:** —
+
+## R2 · Hero y marca (revisión 4, 6 y 3b) — ⬜
+**Qué:** el ☕ del logo (cabecera y pie) y del sello pasa a ser el icono
+Lucide `coffee` con `currentColor`; pegatina «Tostado el lunes» en la
+esquina contraria al sello; línea «Desde 12,90 € al mes, sin permanencia»
+bajo los botones del hero.
+**Depende de:** R1 (`pegatina`), T2, T3, T9
+**Criterios:**
+- CR2.1 No queda el emoji ☕ en `index.html`; logo de cabecera, logo del pie y centro del sello usan el SVG `coffee` de Lucide (comparado con el original), `aria-hidden`, color de tokens — leer HTML + `browser_evaluate` — revisión 4, O2
+- CR2.2 Pegatina «Tostado el lunes» con `pegatina` en el bloque de la foto del hero, en la esquina contraria al sello; no tapa texto ni botones y no desborda a 360 / 768 / 1440 — `browser_evaluate` + capturas — brief §Dirección visual
+- CR2.3 Bajo los botones del hero, texto «Desde 12,90 € al mes, sin permanencia» (coherente con el plan Curioso) con contraste ≥ 4,5:1 — leer HTML + `sonda-pagina` — revisión 3, brief §Para quién
+- CR2.4 El nombre accesible del logo sigue siendo «tueste» (el icono no se lee) — árbol de accesibilidad — O8
+**Verificación:** —
+
+## R3 · Bento sin huecos (revisión 1) — ⬜
+**Qué:** quitar `lg:auto-rows-fr`; Cuerpo con barras de intensidad por café;
+notas más grandes en Notas; sombra tomate en la caja oscura; mosaico a 768
+sin cajas medio vacías.
+**Depende de:** R1, T6
+**Criterios:**
+- CR3.1 Sin `auto-rows-fr` en `#glosario`; ninguna caja con más de ~4rem de espacio vacío bajo su contenido a 768 y 1440 (medir alto del contenido frente al de la caja) — `browser_evaluate` + capturas — revisión 1
+- CR3.2 Sigue cumpliendo P6 a 1440: al menos un `span 2` en columna y otro en fila, sin huecos en la rejilla; a 768, sin huecos; a 360, 1 columna — `browser_evaluate` — P6, C6.2, C6.3
+- CR3.3 Cuerpo muestra una barra de intensidad por café (`ul` con nombre + barra decorativa) con un texto que la explique para el lector de pantalla — leer HTML + árbol de accesibilidad — brief §Detalle memorable (C)
+- CR3.4 La caja oscura tiene sombra visible: token `--shadow-pegatina-tomate` (o similar) en `@theme` y aplicado — leer `src/style.css` + captura — brief §Dirección visual
+**Verificación:** —
+
+## R4 · Planes: elegir plan y empujar el de entrada (revisión 2, 3a, 8 y 9) — ⬜
+**Qué:** aviso sin JS en `#newsletter` cuando se llega desde un plan; pegatina
+«Para empezar» en Curioso; «Más popular» después del `h3`; tarjetas
+alineadas con el título a 768; precios alineados a 1440; retocar «Sea el café
+que sea».
+**Depende de:** R1, T7, T9
+**Criterios:**
+- CR4.1 Al pulsar un botón de plan, `#newsletter` es `:target` y se ve un aviso tipo «¡Buena elección! Déjanos tu correo…» que no aparece si se llega de otro modo (`group-target:` o equivalente, sin JS) — `browser_click` + `browser_evaluate` — revisión 2, brief §Para quién
+- CR4.2 Curioso lleva una pegatina «Para empezar» con `pegatina`, sin tapar su `h3` en 360 / 768 / 1440; Mañanero sigue siendo el destacado central (P3) — `browser_evaluate` + capturas — revisión 3, P3
+- CR4.3 En el DOM, «Más popular» va después del `h3` de Mañanero (sin cambio visual) — leer HTML + captura — revisión 8, O8
+- CR4.4 A 768 el borde izquierdo de las tarjetas coincide con el del `h2`; a 1440 los 3 precios están a la misma altura (±2px) — `browser_evaluate` — revisión 8
+- CR4.5 «Sea el café que sea» sustituido por un texto más claro — leer HTML — revisión 9
+**Verificación:** —
+
+## R5 · FAQ: foco y texto (revisión 5 y 9) — ⬜
+**Qué:** el foco de las preguntas, por fuera de la pegatina como en los
+botones; «eliges otro de los seis» → texto que no sugiera que los orígenes
+no cambian.
+**Depende de:** R1, T8
+**Criterios:**
+- CR5.1 Con Tab en un `summary`, el outline queda fuera del borde de la pegatina (offset positivo, en el `details` vía `:has(> summary:focus-visible)` o similar) y es visible a 360 y 1440 — `sonda-foco` + capturas — revisión 5, O8
+- CR5.2 Las 6 preguntas siguen abriéndose y cerrándose con Enter y Espacio; la flecha gira — `browser_press_key` + `browser_evaluate` — P4, T8
+- CR5.3 El texto de «¿Y si no me gusta…?» ya no dice «otro de los seis» — leer HTML — revisión 9
+**Verificación:** —
+
+## R6 · Rendimiento: srcset de las fotos (revisión 10) — ⬜
+**Qué:** versiones más pequeñas de la foto del hero y de las 6 de tarjetas, con
+`srcset` + `sizes`, para que el móvil descargue menos.
+**Depende de:** T3, T5
+**Criterios:**
+- CR6.1 La foto del hero y las 6 de tarjetas tienen `srcset` con al menos 2 anchos y `sizes` coherente con su hueco; los ficheros existen y responden 200 — leer HTML + `browser_network_requests` — revisión 10, D7
+- CR6.2 A 360 el navegador descarga la versión pequeña (`currentSrc`) y a 1440 la grande; ninguna imagen se deforma — `browser_evaluate` + `sonda-pagina` — O5
+- CR6.3 Lighthouse móvil: Rendimiento ≥ 92 (antes 92) y LCP no peor que 3,3 s; a11y/BP/SEO siguen a 100 — puerta 4 — D7
+**Verificación:** —
+
 ## T10 · README, capturas y verificación del conjunto — ⬜
 **Qué:** `README.md` con tema, cómo arrancar, opción de Tailwind (Vite) y por
 qué, capturas móvil/escritorio, checklist O/P/D y bitácora de IA; Lighthouse
 de accesibilidad y repaso final de todos los criterios del lab.
-**Depende de:** T1–T9
+**Depende de:** T1–T9, R1–R6
 **Criterios:**
 - C10.1 README con los apartados: tema, `npm install` + `npm run dev`, opción de Tailwind y por qué, checklist — leer `README.md` — O9
 - C10.2 Capturas a 360 y 1440 enlazadas en el README y los ficheros existen — leer README + listar ficheros — O9
@@ -167,7 +246,8 @@ de accesibilidad y repaso final de todos los criterios del lab.
 | P6 Bento | T6 |
 | P7 Animaciones con `motion-safe:` | T2, T3, T5 |
 | D1 Hamburguesa sin JS | T2 |
-| D4 Utilidades propias (`@utility`) | T2b (+ explicación en el README: T10) |
+| D4 Utilidades propias (`@utility`) | T2b, R1 (+ explicación en el README: T10) |
+| Revisión de diseño (10 puntos) | R1 (7) · R2 (4, 6, 3b) · R3 (1) · R4 (2, 3a, 8, 9) · R5 (5, 9) · R6 (10) |
 | brief §Secciones (8) | T2 cabecera · T3 hero · T4 pasos · T5 cafés · T6 glosario · T7 planes · T8 FAQ · T9 pie |
 | brief §Móvil | T2, T6, T7 |
 | brief §Contenido | T4, T5, T8 |

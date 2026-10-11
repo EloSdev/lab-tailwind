@@ -400,3 +400,32 @@ tres utilidades: `pie-titulo`, `pie-enlace` (44 px de alto táctil) y
 - Pendiente, honesto para una maqueta: las redes son ficticias
   (`href="#"`) y la newsletter no tiene backend (al enviar, el correo queda
   en la URL y no hay mensaje de confirmación).
+## 12 · Revisión de diseño (2026-10-11)
+
+### Prompt
+
+"Revisa el diseño contra el brief (agente `design-reviewer`, que no edita):
+como mucho 10 puntos en Crítico / Importante / Sugerencia, con arreglo
+concreto. Pregunta clave: ¿podría ser la web de cualquier otro sitio?"
+
+### Qué me dio
+
+Veredicto: se siente «Pegatina pop» de verdad (bordes, sombras duras,
+pegatinas giradas, sello, aplastado en todo lo clicable). Sin críticos. Lo
+que la acercaba a «web de cualquiera»: un hero de foto de catálogo sin la
+pegatina «Tostado el lunes» del brief, y el ☕ del logo, que es el emoji del
+sistema y sale lila (el único color fuera de la paleta, en lo primero que se
+ve).
+
+### Qué corregí y por qué
+
+- Encontró un fallo de UX que ninguna verificación había visto: «Elegir
+  Curioso» llevaba a un formulario que promete un boletín, no la
+  suscripción. Las verificaciones solo comprobaban que el destino existiera.
+- Resolvió una contradicción del brief (empujar el plan de entrada frente a
+  destacar el central) sin romper P3: pegatina «Para empezar» en Curioso y
+  «Desde 12,90 € al mes» en el hero.
+- Descartó dos avisos de verificaciones anteriores (el espacio en «Lo quiero :
+  Etiopía» y las pegatinas de número pegadas al borde).
+- Decidí hacer los 10 puntos. Entran en el plan como tareas R1–R6, cada una
+  con sus criterios y su `verify-task`.
