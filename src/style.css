@@ -106,11 +106,37 @@
   }
 }
 
-/* Tarjeta de paso de «Cómo funciona»: la forma de pegatina (borde, sombra
-   dura, esquinas) sin el efecto de aplastar, porque no se pulsa.
-   El layout (flex, centrado) y el color de fondo se quedan en el HTML.
-   relative: ancla del número, que asoma por la esquina. */
-@utility paso-tarjeta {
+/* Enlace del menú de la cabecera (3: Cafés, Planes, FAQ). Bloque entero
+   pulsable; al pasar el ratón o al tocarlo, fondo menta (texto espresso
+   encima); foco con outline espresso separado 2 px. */
+@utility menu-enlace {
+  display: block;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-menta);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-menta);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: 2px;
+  }
+}
+
+/* Forma de pegatina para cajas que no se pulsan (pasos de «Cómo funciona»,
+   glosario y planes): borde, sombra dura y esquinas, sin el efecto de
+   aplastar. El layout y el color de fondo se quedan en el HTML.
+   relative: ancla de lo que asoma por el borde (número del paso, etiqueta
+   «Más popular»). */
+@utility tarjeta-pegatina {
   position: relative;
   padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6);
   border: 2px solid var(--color-espresso-900);
@@ -139,7 +165,7 @@
   box-shadow: var(--shadow-pegatina);
 }
 
-/* Tarjeta de café: la forma de pegatina de paso-tarjeta y, además, el
+/* Tarjeta de café: la forma de pegatina de tarjeta-pegatina y, además, el
    «se aplasta» de btn-pegatina al pasar el ratón (sube 2 px y la sombra
    crece 2 px). Con focus-within hace lo mismo cuando el teclado llega a su
    botón. Layout y fondo, en el HTML. */
@@ -169,30 +195,11 @@
   }
 }
 
-/* Pegatina del proceso (lavado, natural, honey) en la esquina de la foto.
-   El color (cada proceso, el suyo) y el giro se ponen en el HTML. */
-@utility cafe-proceso {
-  position: absolute;
-  top: calc(var(--spacing) * 3);
-  left: calc(var(--spacing) * 3);
-  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-espresso-900);
-  border: 2px solid var(--color-espresso-900);
-  border-radius: 9999px;
-  box-shadow: var(--shadow-pegatina);
-}
-
-/* Etiqueta «Más popular» del plan destacado: pegatina que asoma por el
-   borde superior derecho de la tarjeta (que es relative por paso-tarjeta).
-   Mismo aspecto que cafe-proceso, pero colocada fuera de la caja. El giro y
-   el color, en el HTML. */
-@utility plan-etiqueta {
-  position: absolute;
-  top: calc(var(--spacing) * -4);
-  right: calc(var(--spacing) * 4);
+/* Pegatina de texto: píldora con borde y sombra dura. La usan el proceso
+   de cada café (lavado, natural, honey), «Más popular» y «1 correo al mes».
+   Aquí solo el aspecto común; la posición (absolute, top/right/left), el
+   giro y el color de fondo cambian en cada sitio y van en el HTML. */
+@utility pegatina {
   padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
   font-family: var(--font-display);
   font-size: var(--text-sm);
@@ -218,7 +225,7 @@
   }
 }
 
-/* Pregunta frecuente (P4) como pegatina: forma de paso-tarjeta sin el
+/* Pregunta frecuente (P4) como pegatina: forma de tarjeta-pegatina sin el
    aplastado (no es un botón de acción, solo se despliega). El fondo cambia
    al abrirla con open: en el HTML. Se repite 6 veces. */
 @utility faq-item {

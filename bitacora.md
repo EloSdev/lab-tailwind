@@ -429,3 +429,31 @@ ve).
   Etiopía» y las pegatinas de número pegadas al borde).
 - Decidí hacer los 10 puntos. Entran en el plan como tareas R1–R6, cada una
   con sus criterios y su `verify-task`.
+## 13 · R1 · Utilidades comunes y nombres (2026-10-11)
+
+### Prompt
+
+"Refactor sin cambio visual: `paso-tarjeta` → `tarjeta-pegatina`; una
+`@utility pegatina` con lo común de `cafe-proceso` y `plan-etiqueta` (la
+posición, el giro y el color, en el HTML); `@utility menu-enlace` para los
+enlaces del menú. Mide los estilos antes y después."
+
+### Qué me dio
+
+Las tres utilidades y el HTML limpio: cada pegatina es ahora
+`pegatina absolute top-3 left-3 -rotate-3 bg-menta` (se lee dónde va y cómo
+gira) y cada enlace del menú tiene una sola clase. Midió 686 valores antes y
+después: 0 diferencias.
+
+### Qué corregí y por qué
+
+- **El fallo fue mío, en el plan**: el criterio CR1.3 prometía que
+  desaparecería el aviso de «más de 12 clases» del `<ul>` del menú, pero
+  `menu-enlace` limpia los enlaces, no el `<ul>`. Sus 20 clases son casi todas
+  variantes `md:` (panel en móvil, fila en escritorio): meterlas en una
+  `@utility` escondería los breakpoints. Corregí el criterio con una nota que
+  lo explica, en vez de forzar un refactor peor.
+- Para un refactor, «se ve igual» no vale a ojo: la verificación construyó la
+  versión del último commit y la nueva, y comparó 21 420 estilos calculados
+  (en reposo, hover, active y foco, a 360/768/1440) y capturas píxel a píxel:
+  0 diferencias.

@@ -140,7 +140,7 @@ línea de copyright con borde superior.
 > y 4 sugerencias). El alumno eligió hacer los 10. Mismas reglas: tokens,
 > `rem` en letra y espaciados, `px` solo en bordes/sombras/outline.
 
-## R1 · Utilidades comunes y nombres (revisión 7) — ⬜
+## R1 · Utilidades comunes y nombres (revisión 7) — ✅
 **Qué:** refactor sin cambio visual. `paso-tarjeta` → `tarjeta-pegatina`;
 `@utility pegatina` con lo común de `cafe-proceso` y `plan-etiqueta` (la
 posición y el giro, en el HTML); `@utility menu-enlace` para los 3 enlaces
@@ -149,9 +149,9 @@ del menú.
 **Criterios:**
 - CR1.1 No queda ningún `paso-tarjeta`, `cafe-proceso` ni `plan-etiqueta` en `index.html` ni `src/style.css`; existen `tarjeta-pegatina`, `pegatina` y `menu-enlace` — leer ficheros — revisión 7
 - CR1.2 Las pegatinas de proceso (T5), «Más popular» (T7) y «1 correo al mes» (T9) siguen en la misma posición, giro y estilo (estilos calculados iguales que antes: `position`, `top/right/left`, `rotate`, `box-shadow`, `border`) — `browser_evaluate` + capturas — sin regresión
-- CR1.3 Los 3 enlaces del menú usan `menu-enlace` y ya no sale el aviso de «>12 utilidades» del `<ul>`; hover, active y foco iguales que en T2 — `check-estatico` + `sonda-foco` — tailwind-clases-limpias
+- CR1.3 Los 3 enlaces del menú usan `menu-enlace` (cada uno con ≤ 12 utilidades); hover, active y foco iguales que en T2 — `check-estatico` + `sonda-foco` — tailwind-clases-limpias. *(Corregido el 2026-10-11: decía que desaparecería el aviso del `<ul>`, pero ese aviso es de las 20 clases del propio `<ul>`, casi todas variantes `md:` del panel móvil/fila de escritorio; extraerlas a `@utility` escondería los breakpoints. Aviso aceptado por el alumno.)*
 - CR1.4 Sin cambio visual: capturas a 360 y 1440 equivalentes a las de antes del refactor — capturas — sin regresión
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» (summary, y ul del menú aceptado en CR1.3) · comparado con HEAD: 21 420 estilos calculados (reposo, hover, active, foco; 360/768/1440) con 0 diferencias y capturas de página completa con 0 píxeles distintos · 33/33 interactivos con foco visible · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · T1–T9 sin regresiones
 
 ## R2 · Hero y marca (revisión 4, 6 y 3b) — ⬜
 **Qué:** el ☕ del logo (cabecera y pie) y del sello pasa a ser el icono

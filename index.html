@@ -31,9 +31,9 @@
             </details>
 
             <ul class="absolute inset-x-4 top-full z-10 hidden flex-col gap-1 border-2 border-espresso-900 bg-crema p-2 shadow-pegatina rounded-xl peer-open:flex md:static md:flex md:flex-row md:border-0 md:p-0 md:shadow-none">
-              <li><a href="#cafes" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">Cafés</a></li>
-              <li><a href="#planes" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">Planes</a></li>
-              <li><a href="#faq" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">FAQ</a></li>
+              <li><a href="#cafes" class="menu-enlace">Cafés</a></li>
+              <li><a href="#planes" class="menu-enlace">Planes</a></li>
+              <li><a href="#faq" class="menu-enlace">FAQ</a></li>
             </ul>
           </nav>
 
@@ -110,7 +110,7 @@
              role="list": Safari deja de anunciar como lista un <ol> con
              list-style: none; así lo recupera. -->
         <ol role="list" class="mt-14 flex list-none flex-col gap-12 md:flex-row md:gap-8">
-          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-menta">
+          <li class="tarjeta-pegatina flex flex-1 flex-col items-center text-center bg-menta">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
               <path d="M10 2v2" />
               <path d="M14 2v2" />
@@ -127,7 +127,7 @@
             </p>
           </li>
 
-          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-tomate-500">
+          <li class="tarjeta-pegatina flex flex-1 flex-col items-center text-center bg-tomate-500">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
               <path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" />
             </svg>
@@ -141,7 +141,7 @@
             </p>
           </li>
 
-          <li class="paso-tarjeta flex flex-1 flex-col items-center text-center bg-espresso-100">
+          <li class="tarjeta-pegatina flex flex-1 flex-col items-center text-center bg-espresso-100">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12">
               <path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" />
               <path d="M12 22V12" />
@@ -178,7 +178,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-etiopia.webp" alt="Taza blanca volcada sobre un montón de granos de café tostados" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso -rotate-3 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+                <p class="pegatina absolute top-3 left-3 -rotate-3 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Etiopía
@@ -205,7 +205,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-colombia.webp" alt="Mano recogiendo cerezas de café rojas y maduras de una rama del cafeto" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+                <p class="pegatina absolute top-3 left-3 rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Colombia
@@ -232,7 +232,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-kenia.webp" alt="Granos de café tostados dentro de un cuenco blanco, vistos de cerca desde arriba" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso -rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+                <p class="pegatina absolute top-3 left-3 -rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Kenia
@@ -259,7 +259,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-guatemala.webp" alt="Rama de cafeto con cerezas verdes, amarillas y rojas cubiertas de gotas de agua" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso rotate-3 bg-crema"><span class="sr-only">Proceso: </span>Honey</p>
+                <p class="pegatina absolute top-3 left-3 rotate-3 bg-crema"><span class="sr-only">Proceso: </span>Honey</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Guatemala
@@ -286,7 +286,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-brasil.webp" alt="Saco de arpillera abierto y lleno de granos de café tostados sobre fondo negro" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso -rotate-3 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
+                <p class="pegatina absolute top-3 left-3 -rotate-3 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Brasil
@@ -313,7 +313,7 @@
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
                 <img src="/img/cafe-ruanda.webp" alt="Agua cayendo desde un hervidor sobre el filtro de papel de una cafetera de vidrio, con un cuenco de granos delante" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
-                <p class="cafe-proceso rotate-2 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
+                <p class="pegatina absolute top-3 left-3 rotate-2 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
                 Ruanda
@@ -347,7 +347,7 @@
              Tueste 2×1             | Proceso 2×1
            A sm (2 columnas): Notas y Proceso ocupan la fila entera; el resto,
            de dos en dos. Las cajas no se pulsan: forma de pegatina
-           (paso-tarjeta), sin el efecto de aplastar. -->
+           (tarjeta-pegatina), sin el efecto de aplastar. -->
       <section id="glosario" aria-labelledby="glosario-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
         <h2 id="glosario-titulo" class="font-display text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
           ¿Qué es eso de las notas de cata?
@@ -358,7 +358,7 @@
         </p>
 
         <ul role="list" class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-4">
-          <li class="paso-tarjeta flex flex-col bg-tomate-500 sm:col-span-2 lg:row-span-2">
+          <li class="tarjeta-pegatina flex flex-col bg-tomate-500 sm:col-span-2 lg:row-span-2">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12 lg:size-16">
               <path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z" />
               <path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z" />
@@ -383,7 +383,7 @@
             </div>
           </li>
 
-          <li class="paso-tarjeta bg-menta">
+          <li class="tarjeta-pegatina bg-menta">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
               <path d="M21.66 17.67a1.08 1.08 0 0 1-.04 1.6A12 12 0 0 1 4.73 2.38a1.1 1.1 0 0 1 1.61-.04z" />
               <path d="M19.65 15.66A8 8 0 0 1 8.35 4.34" />
@@ -397,7 +397,7 @@
             </p>
           </li>
 
-          <li class="paso-tarjeta flex flex-col bg-espresso-900 text-crema lg:row-span-2">
+          <li class="tarjeta-pegatina flex flex-col bg-espresso-900 text-crema lg:row-span-2">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
               <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
               <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
@@ -417,7 +417,7 @@
             </div>
           </li>
 
-          <li class="paso-tarjeta bg-espresso-100">
+          <li class="tarjeta-pegatina bg-espresso-100">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
               <path d="M10 7v10.9" />
               <path d="M14 6.1V17" />
@@ -432,7 +432,7 @@
             </p>
           </li>
 
-          <li class="paso-tarjeta bg-espresso-50 lg:col-span-2">
+          <li class="tarjeta-pegatina bg-espresso-50 lg:col-span-2">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
               <path d="M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z" />
               <path d="M5.341 10.62a4 4 0 1 0 5.279-5.28" />
@@ -446,7 +446,7 @@
             </p>
           </li>
 
-          <li class="paso-tarjeta bg-menta sm:col-span-2">
+          <li class="tarjeta-pegatina bg-menta sm:col-span-2">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
               <path d="M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z" />
               <path d="M15 3v5a1 1 0 0 0 1 1h5" />
@@ -471,7 +471,7 @@
            Rejilla de 1 columna (estrecha y centrada) hasta lg, y 3 desde lg:
            a 768 las tres no caben sin apretar precio y ventajas.
            Las tarjetas no se pulsan (solo su botón): forma de pegatina
-           (paso-tarjeta), sin el efecto de aplastar.
+           (tarjeta-pegatina), sin el efecto de aplastar.
            Destacado: fondo tomate, sombra más larga y, en lg, -my-6 en su <li>
            para que sobresalga por arriba y por abajo sin escalar nada. -->
       <section id="planes" aria-labelledby="planes-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
@@ -486,7 +486,7 @@
 
         <ul role="list" class="mx-auto mt-14 grid max-w-md grid-cols-1 gap-12 lg:max-w-none lg:grid-cols-3 lg:gap-8">
           <li>
-            <article class="paso-tarjeta flex h-full flex-col bg-espresso-50">
+            <article class="tarjeta-pegatina flex h-full flex-col bg-espresso-50">
               <h3 class="font-display text-3xl font-bold">Curioso</h3>
               <p class="mt-1">Para estrenarte sin compromiso.</p>
               <p class="mt-6 font-display">
@@ -505,8 +505,8 @@
           </li>
 
           <li class="lg:-my-6">
-            <article class="paso-tarjeta flex h-full flex-col bg-tomate-500 shadow-pegatina-lg">
-              <p class="plan-etiqueta rotate-3 bg-menta"><span aria-hidden="true">⭐ </span>Más popular</p>
+            <article class="tarjeta-pegatina flex h-full flex-col bg-tomate-500 shadow-pegatina-lg">
+              <p class="pegatina absolute -top-4 right-4 rotate-3 bg-menta"><span aria-hidden="true">⭐ </span>Más popular</p>
               <h3 class="font-display text-3xl font-bold">Mañanero</h3>
               <p class="mt-1">Para quien no perdona el café del desayuno.</p>
               <p class="mt-6 font-display">
@@ -525,7 +525,7 @@
           </li>
 
           <li>
-            <article class="paso-tarjeta flex h-full flex-col bg-espresso-50">
+            <article class="tarjeta-pegatina flex h-full flex-col bg-espresso-50">
               <h3 class="font-display text-3xl font-bold">Insomne</h3>
               <p class="mt-1">Para casas cafeteras y oficinas con sueño.</p>
               <p class="mt-6 font-display">
@@ -726,7 +726,7 @@
                Sin backend: action="#newsletter" recarga la página y vuelve
                aquí; el correo no se guarda en ningún sitio. -->
           <div id="newsletter" class="relative p-6 text-espresso-900 bg-menta border-2 border-crema shadow-pegatina-crema rounded-2xl">
-            <p class="plan-etiqueta rotate-3 bg-tomate-500">1 correo al mes</p>
+            <p class="pegatina absolute -top-4 right-4 rotate-3 bg-tomate-500">1 correo al mes</p>
             <h2 class="pie-titulo">El café del mes, antes que nadie</h2>
             <p class="mt-2">Te contamos qué tostamos y cómo sacarle partido. Nada más.</p>
             <form action="#newsletter" class="mt-4">
