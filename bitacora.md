@@ -162,7 +162,12 @@ Titular «Café del bueno, sin postureo.»
 - **La IA dio un enlace erróneo al autor de la foto**: usó el ID del fichero
   de `images.unsplash.com` como si fuera el de la página
   (`unsplash.com/photos/photo-…` → «Page not found»). El autor queda
-  pendiente de identificar o de cambiar la foto.
+  pendiente de identificar. Ni buscando se encontró la página original, así
+  que **cambié la foto** por una parecida elegida por mí, con autor y licencia
+  a la vista: Łukasz Rawa, Unsplash License.
 - Lighthouse avisa de Rendimiento 95: la foto es un JPG de 232 KB para un
   hueco de 520 px y le falta `fetchpriority="high"` (es la imagen más grande
-  de la primera pantalla). Pendiente si se va a por el D7.
+  de la primera pantalla, la que marca el LCP). Con la foto nueva en **WebP
+  de 800×600 y 155 KB** (comparé 4 combinaciones de tamaño y calidad) y
+  `fetchpriority="high"`: Rendimiento 95 → 97 y LCP 2,9 s → 2,6 s. También
+  cambié el `alt`: el anterior decía «brillantes» y estos granos no lo son.
