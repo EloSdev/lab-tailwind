@@ -135,3 +135,61 @@
   border-radius: 9999px;
   box-shadow: var(--shadow-pegatina);
 }
+
+/* Tarjeta de café: la forma de pegatina de paso-tarjeta y, además, el
+   «se aplasta» de btn-pegatina al pasar el ratón (sube 2 px y la sombra
+   crece 2 px). Con focus-within hace lo mismo cuando el teclado llega a su
+   botón. Layout y fondo, en el HTML. */
+@utility cafe-tarjeta {
+  padding: calc(var(--spacing) * 4);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-pegatina);
+  transition-property: box-shadow, translate;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+
+  &:focus-within {
+    box-shadow: var(--shadow-pegatina-lg);
+    @media (prefers-reduced-motion: no-preference) {
+      translate: -2px -2px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: var(--shadow-pegatina-lg);
+      @media (prefers-reduced-motion: no-preference) {
+        translate: -2px -2px;
+      }
+    }
+  }
+}
+
+/* Pegatina del proceso (lavado, natural, honey) en la esquina de la foto.
+   El color (cada proceso, el suyo) y el giro se ponen en el HTML. */
+@utility cafe-proceso {
+  position: absolute;
+  top: calc(var(--spacing) * 3);
+  left: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-espresso-900);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-pegatina);
+}
+
+/* Nota de cata como pegatina pequeña: se repite 18 veces (3 por tarjeta). */
+@utility cata-nota {
+  display: inline-block;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 3);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-espresso-900);
+  background-color: var(--color-espresso-100);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+}

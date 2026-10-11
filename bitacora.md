@@ -204,3 +204,51 @@ dos utilidades nuevas, `paso-tarjeta` y `paso-numero`, para no repetir más de
 - Primera tarea después de registrar el **hook `Stop`** del harness (build +
   `check-estatico` al parar si hay cambios en `maquetacion_tueste/`). No está
   comprobado que se ejecutara en esta sesión: puede activarse en la siguiente.
+
+## 7 · T5 · Cafés del mes (2026-10-11)
+
+### Prompt
+
+"Construye la sección `#cafes` después de «Cómo funciona»: 6 tarjetas
+`article` en `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`, cada una con
+foto, origen, proceso, notas de cata, precio («14,90 €», bolsa de 250 g) y
+botón «Lo quiero» con `btn-pegatina`. Hover que «se aplasta» con
+`motion-safe:`. Fotos de Unsplash en WebP, y créditos solo de páginas
+abiertas de verdad."
+
+### Qué me dio
+
+Seis tarjetas tipo «etiqueta de paquete» (Etiopía, Colombia, Kenia,
+Guatemala, Brasil, Ruanda): foto `aspect-4/3 object-cover` con una pegatina
+girada del proceso (menta = lavado, tomate = natural, crema = honey), una
+frase con gracia, notas de cata como chips, precio grande y botón. Tres
+utilidades nuevas: `cafe-tarjeta` (forma + subir 2 px y sombra de 6 px al
+pasar el ratón o al llegar con el teclado al botón), `cafe-proceso` y
+`cata-nota`. Fotos de 600×450 en WebP, de 26 a 71 KB.
+
+### Qué corregí y por qué
+
+- El botón dice «Lo quiero» seis veces: se añadió el café en `sr-only`
+  («Lo quiero: Kenia Nyeri») para que un lector de pantalla los distinga.
+- El hover de la tarjeta va en la `@utility` (con `@media (hover: hover)` y
+  `prefers-reduced-motion: no-preference`), como `btn-pegatina`, en vez de
+  repetir 4 clases de estado en las 6 tarjetas. Con `:focus-within` también
+  sube al llegar con Tab, para que el teclado vea lo mismo que el ratón.
+- Se descartó el zoom de la foto al pasar el ratón (opcional del enunciado):
+  con la tarjeta subiendo ya hay bastante movimiento.
+- Créditos: cada autor salió de abrir la página de la foto en Unsplash, no
+  del nombre del fichero. Todas con la Unsplash License (para el README, T10):
+  - `cafe-etiopia.webp` · pariwat pannium · https://unsplash.com/photos/coffee-beans-with-white-cup-S8daAB_nJSg
+  - `cafe-colombia.webp` · Carlos Felipe Ramírez Mesa · https://unsplash.com/photos/a-person-holding-a-bunch-of-berries-Ni7Cfu8AIMI
+  - `cafe-kenia.webp` · Alin Luna · https://unsplash.com/photos/brown-coffee-beans-on-white-ceramic-bowl-lGl3spVIU0g
+  - `cafe-guatemala.webp` · Gerson Cifuentes · https://unsplash.com/photos/shallow-focus-photography-of-coffee-bean-W1VqcpcnSHk
+  - `cafe-brasil.webp` · Tina Guina · https://unsplash.com/photos/shallow-focus-photography-of-coffee-beans-in-sack-obV_LM0KjxY
+  - `cafe-ruanda.webp` · Eiliv Aceron · https://unsplash.com/photos/person-pouring-water-in-clear-glass-jar-XP5zW2ngk9w
+- Por el fallo del enlace inventado en T3, la verificación **abrió por su
+  cuenta las 6 páginas**: existen, y autor y licencia coinciden con lo
+  apuntado. También miró que las fotos no llevaran texto ni marcas (la báscula
+  de la de Ruanda, ampliada, tiene etiquetas ilegibles).
+- Lighthouse avisa de que el Rendimiento baja de 97 a 93–94 (la foto del
+  hero tarda 3,1 s en vez de 2,6 s): en móvil, Chrome descarga ya 3 fotos de
+  tarjetas aunque llevan `loading="lazy"`, y compiten con la del hero.
+  Pendiente si se va a por el D7 (más compresión o `srcset`).

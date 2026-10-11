@@ -159,6 +159,184 @@
           </li>
         </ol>
       </section>
+
+      <!-- Cafés del mes: cada tarjeta es la etiqueta de un paquete. La
+           pegatina de la foto dice el proceso y su color lo distingue
+           (lavado menta, natural tomate, honey crema). -->
+      <section id="cafes" aria-labelledby="cafes-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
+        <h2 id="cafes-titulo" class="font-display text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
+          Este mes, en el tostador
+        </h2>
+        <p class="mt-4 max-w-xl text-lg text-espresso-700">
+          Seis orígenes, tostados en tandas pequeñas. Cada bolsa trae 250 g
+          (unas 30 tazas) y te la mandamos en grano o molida para tu cafetera.
+        </p>
+
+        <!-- role="list": Safari no anuncia como lista un <ul> sin viñetas. -->
+        <ul role="list" class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-etiopia.webp" alt="Taza blanca volcada sobre un montón de granos de café tostados" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso -rotate-3 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Etiopía
+                <span class="block font-sans text-base font-semibold text-espresso-700">Yirgacheffe</span>
+              </h3>
+              <p class="mt-3">Para quien cree que el café siempre amarga. Ligero y perfumado, casi como un té.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">floral</li>
+                <li class="cata-nota">té negro</li>
+                <li class="cata-nota">limón</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">15,90 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Etiopía Yirgacheffe</span></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-colombia.webp" alt="Mano recogiendo cerezas de café rojas y maduras de una rama del cafeto" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Colombia
+                <span class="block font-sans text-base font-semibold text-espresso-700">Huila</span>
+              </h3>
+              <p class="mt-3">El de toda la vida, pero bien hecho. Dulce y redondo: ideal para empezar.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">chocolate con leche</li>
+                <li class="cata-nota">caramelo</li>
+                <li class="cata-nota">manzana roja</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">13,50 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Colombia Huila</span></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-kenia.webp" alt="Granos de café tostados dentro de un cuenco blanco, vistos de cerca desde arriba" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso -rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Kenia
+                <span class="block font-sans text-base font-semibold text-espresso-700">Nyeri</span>
+              </h3>
+              <p class="mt-3">Jugoso y con chispa. Si te gusta el zumo de pomelo, este es tu café.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">frutos rojos</li>
+                <li class="cata-nota">pomelo</li>
+                <li class="cata-nota">caña de azúcar</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">16,90 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Kenia Nyeri</span></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-guatemala.webp" alt="Rama de cafeto con cerezas verdes, amarillas y rojas cubiertas de gotas de agua" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso rotate-3 bg-crema"><span class="sr-only">Proceso: </span>Honey</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Guatemala
+                <span class="block font-sans text-base font-semibold text-espresso-700">Huehuetenango</span>
+              </h3>
+              <p class="mt-3">Sabe a postre: cacao y frutos secos. Con leche está de escándalo.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">cacao</li>
+                <li class="cata-nota">nuez</li>
+                <li class="cata-nota">ciruela</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">14,90 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Guatemala Huehuetenango</span></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-brasil.webp" alt="Saco de arpillera abierto y lleno de granos de café tostados sobre fondo negro" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso -rotate-3 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Brasil
+                <span class="block font-sans text-base font-semibold text-espresso-700">Cerrado Mineiro</span>
+              </h3>
+              <p class="mt-3">Mucho cuerpo, poca acidez y cero sustos. El café del desayuno de diario.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">chocolate negro</li>
+                <li class="cata-nota">avellana</li>
+                <li class="cata-nota">toffee</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">12,90 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Brasil Cerrado Mineiro</span></a>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
+              <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
+                <img src="/img/cafe-ruanda.webp" alt="Agua cayendo desde un hervidor sobre el filtro de papel de una cafetera de vidrio, con un cuenco de granos delante" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <p class="cafe-proceso rotate-2 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
+              </div>
+              <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
+                Ruanda
+                <span class="block font-sans text-base font-semibold text-espresso-700">Nyamasheke</span>
+              </h3>
+              <p class="mt-3">Fruta madura y un final a cacao. Para lucirte con la cafetera de filtro.</p>
+              <p class="mt-4 text-sm font-semibold text-espresso-700">Sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">fresa</li>
+                <li class="cata-nota">uva negra</li>
+                <li class="cata-nota">cacao</li>
+              </ul>
+              <div class="mt-auto flex items-end justify-between gap-4 pt-6">
+                <p>
+                  <span class="block font-display text-3xl leading-none font-extrabold">16,50 €</span>
+                  <span class="mt-1 block text-sm text-espresso-700">la bolsa de 250 g</span>
+                </p>
+                <a href="#planes" class="btn-pegatina px-4 py-2 bg-tomate-500 text-espresso-900">Lo quiero<span class="sr-only">: Ruanda Nyamasheke</span></a>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer></footer>

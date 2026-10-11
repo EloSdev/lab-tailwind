@@ -76,7 +76,7 @@ icono Lucide, número y texto corto.
 - C4.4 Iconos SVG inline decorativos con `aria-hidden="true"` (sin texto dentro de imágenes) — leer HTML — O8, brief §Contenido
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: pegatinas de número a < 3 px del borde a 360 (no se cortan, pero justas), `role="list"` sin probar en Safari/VoiceOver, 2 «>12 utilidades» heredados de T2 · `flexDirection` column/row/row a 360/768/1440, 3 pasos del mismo ancho y centrados · contraste mín. 5,37:1 (tomate) · Lighthouse a11y/BP/SEO 100, Rendimiento 97 · T1–T3 sin regresiones
 
-## T5 · Cafés del mes (rejilla de tarjetas) — ⬜
+## T5 · Cafés del mes (rejilla de tarjetas) — ✅
 **Qué:** sección `#cafes` con ≥ 6 tarjetas `article`: foto, origen, proceso,
 notas de cata, precio y botón; hover «se aplasta».
 **Depende de:** T1, T2 (estilo de botón y sombra)
@@ -86,7 +86,7 @@ notas de cata, precio y botón; hover «se aplasta».
 - C5.3 Todas las imágenes de tarjeta con el mismo alto, `aspect-*` + `object-cover` y `deformadas` vacío — `sonda-pagina` + `browser_evaluate` — O5
 - C5.4 Tarjetas con `p-*`, `rounded-*`, `border-2` y la sombra dura; hover con `transition` y `motion-safe:hover:-translate-*` — `check-estatico` — O5, brief §Detalle memorable
 - C5.5 Datos realistas: 6 orígenes distintos, precios entre 12 y 17 € con formato `14,90 €` — leer HTML — brief §Contenido
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: Rendimiento 97 → 93–94 (LCP 3,1 s; fotos lazy de tarjetas compiten con la del hero en móvil), nombre accesible «Lo quiero : Etiopía…» con espacio antes de «:» · grid 1/2/3 columnas a 360/768/1440, 6 fotos del mismo alto sin deformar, 13/13 interactivos con foco visible · créditos de las 6 fotos comprobados abriendo sus páginas · Lighthouse a11y/BP/SEO 100 · T1–T4 sin regresiones
 
 ## T6 · Glosario de cata en bento — ⬜
 **Qué:** sección «¿Qué es eso de las notas de cata?» con 5–6 cajas (acidez,
