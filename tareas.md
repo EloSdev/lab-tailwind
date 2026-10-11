@@ -22,7 +22,7 @@
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, 4 avisos (sin favicon, sin `meta description` → SEO 90, DM Sans aún sin texto que la use, `dist/` previo) · Lighthouse a11y 100
   · 2026-10-11 · ✅ PASA tras corregir avisos (meta description, favicon SVG, `@source not` bitácora) · Lighthouse a11y 100 / BP 100 / SEO 100 · queda: DM Sans sin texto aún (T2)
 
-## T2 · Cabecera con menú hamburguesa sin JS — ⬜
+## T2 · Cabecera con menú hamburguesa sin JS — ✅
 **Qué:** logo `☕ tueste`, menú (Cafés, Planes, FAQ) y botón «Suscríbete» con
 el efecto «se aplasta». En móvil, menú en `<details>`/`<summary>` (D1); desde
 `md`, en línea.
@@ -34,7 +34,7 @@ el efecto «se aplasta». En móvil, menú en `<details>`/`<summary>` (D1); desd
 - C2.4 A 360 el menú está cerrado; con Tab hasta el `summary` + Enter se abre, los enlaces reciben foco y otro Enter lo cierra — `browser_press_key` + `sonda-foco` + captura — D1, brief §Móvil
 - C2.5 A ≥ 768 el `summary` no se ve y los enlaces del menú sí, en fila — `browser_evaluate` (`display`, `top`) — brief §Móvil
 - C2.6 Botón «Suscríbete» tomate con texto *espresso*, `border-2` y la sombra dura; `motion-safe:` en su `hover:`/`active:` `translate-*` — `check-estatico` + `sonda-pagina` (contraste) — brief §Detalle memorable
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: 3 «>12 utilidades» (summary, ul, botón), `<ul>` fuera del `<details>` (el summary anuncia «expandido» sin contenido dentro), Safari/VoiceOver sin probar · botón 5,37:1, espresso/menta 10,46:1 · Lighthouse 100/100/100 · DM Sans ya carga sola
 
 ## T3 · Hero con sello giratorio — ⬜
 **Qué:** `h1`, subtítulo, botón principal «Suscríbete» y secundario «Ver

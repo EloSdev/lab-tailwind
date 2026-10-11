@@ -37,4 +37,7 @@
 
   /* Sombra dura de pegatina: desplazada y sin difuminado. */
   --shadow-pegatina: 4px 4px 0 var(--color-espresso-900);
+  /* La misma sombra, más larga: hover de lo que «se aplasta» (sube 2 px y
+     la sombra crece 2 px, así la base parece quedarse en su sitio). */
+  --shadow-pegatina-lg: 6px 6px 0 var(--color-espresso-900);
 }

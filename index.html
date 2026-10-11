@@ -11,8 +11,39 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="module" src="/src/main.js"></script>
   </head>
-  <body class="bg-crema font-sans text-espresso-900">
-    <header></header>
+  <body class="bg-crema font-sans text-espresso-900" ontouchstart="">
+    <header>
+      <div class="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 md:px-8">
+        <a href="#" class="whitespace-nowrap font-display text-2xl font-extrabold tracking-tight rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-espresso-900">
+          <span aria-hidden="true">☕</span> tueste
+        </a>
+
+        <div class="flex items-center gap-2 md:gap-6">
+          <nav aria-label="Principal">
+            <!-- Móvil: el <details> solo hace de interruptor (sin JS).
+                 La lista es su hermana y se enseña con peer-open:. -->
+            <details class="peer group md:hidden">
+              <summary class="grid size-11 cursor-pointer list-none place-items-center text-xl border-2 border-espresso-900 rounded-lg hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900 [&::-webkit-details-marker]:hidden">
+                <span class="sr-only">Menú</span>
+                <span aria-hidden="true" class="group-open:hidden">☰</span>
+                <span aria-hidden="true" class="hidden group-open:inline">✕</span>
+              </summary>
+            </details>
+
+            <ul class="absolute inset-x-4 top-full z-10 hidden flex-col gap-1 border-2 border-espresso-900 bg-crema p-2 shadow-pegatina rounded-xl peer-open:flex md:static md:flex md:flex-row md:border-0 md:p-0 md:shadow-none">
+              <li><a href="#cafes" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">Cafés</a></li>
+              <li><a href="#planes" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">Planes</a></li>
+              <li><a href="#faq" class="block rounded-lg px-3 py-2.5 font-semibold hover:bg-menta active:bg-menta focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso-900">FAQ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Botón «se aplasta»: se repetirá en hero, tarjetas y planes. -->
+          <a href="#planes" class="inline-flex min-h-11 items-center px-3 font-display font-bold text-espresso-900 bg-tomate-500 border-2 border-espresso-900 rounded-lg shadow-pegatina transition hover:shadow-pegatina-lg motion-safe:hover:-translate-x-0.5 motion-safe:hover:-translate-y-0.5 active:shadow-none motion-safe:active:translate-x-1 motion-safe:active:translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-espresso-900 md:px-5">
+            Suscríbete
+          </a>
+        </div>
+      </div>
+    </header>
 
     <main>
       <h1 class="font-display text-5xl font-extrabold">Tueste</h1>

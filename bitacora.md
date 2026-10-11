@@ -64,3 +64,34 @@ importadas en `main.js` y sin `tailwind.config.js` (bien: v4). Pero:
   `@source not "../tareas.md";` (etc.) en `src/style.css`.
 - Pendiente de vigilar: medir el contraste de los tonos intermedios de
   `espresso` cuando se usen como texto (T2 en adelante).
+
+## 3 · T2 · Cabecera con menú hamburguesa sin JS (2026-10-11)
+
+### Prompt
+
+"Construye T2: logo, menú Cafés / Planes / FAQ y botón «Suscríbete» que se
+aplasta (texto espresso sobre tomate, sombra dura, `motion-safe:` en los
+`translate`). En móvil, hamburguesa sin JS con `<details>`/`<summary>`."
+
+### Qué me dio
+
+Una cabecera flex con un truco limpio: el `<details class="peer">` solo
+lleva el `<summary>` (☰/✕) y hace de interruptor; la lista `<ul>` va al lado,
+como hermana, y se enseña con `peer-open:flex`. Desde `md` el details
+desaparece y la misma lista se pone en fila: una sola lista, sin enlaces
+duplicados para el lector de pantalla. Añadió el token
+`--shadow-pegatina-lg` en vez de una sombra arbitraria.
+
+### Qué corregí y por qué
+
+- La primera versión no cabía a 360 px: con la palabra «Menú» visible en el
+  botón, el logo se partía en dos líneas. Se cambió a un botón ☰ de 44×44 px
+  con «Menú» en `sr-only` (lo sigue leyendo el lector de pantalla) y
+  `whitespace-nowrap` en el logo.
+- La verificación avisó de un coste de accesibilidad de la técnica: como la
+  lista está fuera del `<details>`, el lector de pantalla anuncia el botón
+  como «expandido» aunque dentro no hay nada. Se usa bien con teclado (abrir y
+  Tab lleva a «Cafés») y Lighthouse da 100, pero es la pega que hay que contar
+  en el README para el D1.
+- El botón quedó con 23 clases, y se va a repetir en hero, tarjetas y planes:
+  candidato a `@utility` (D4) antes de copiarlo.
