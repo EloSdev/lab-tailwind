@@ -490,3 +490,35 @@ cuatro cambios pequeños en `index.html`.
   lleva. La verificación lo confirmó en el árbol de accesibilidad real de
   Chrome. El snapshot del MCP de Playwright sí lo enseñaba, pero es una
   rareza de esa herramienta.
+
+## 15 · R3 · Bento sin huecos (2026-10-11)
+
+### Prompt
+
+"Quita `lg:auto-rows-fr` del glosario. En Cuerpo, una barra de intensidad
+por café, con texto para el lector de pantalla. Las notas de Notas, más
+grandes. Una sombra tomate (token nuevo) para la caja oscura. Y a 768, que
+no queden cajas medio vacías."
+
+### Qué me dio
+
+La rejilla sin `auto-rows-fr` y con `sm:grid-flow-dense`, que a 768 junta
+Acidez y Dulzor (de largo parecido) y deja el resto a fila entera; 6 barras
+(`@utility cuerpo-barra`, el ancho con `w-1/5` … `w-full`) con «cuerpo N de
+5» en `sr-only`; el token `--shadow-pegatina-tomate`. También la hizo el
+agente principal directamente.
+
+### Qué corregí y por qué
+
+- **Medir antes de dar por buena la rejilla**: al quitar `auto-rows-fr`, la
+  caja Notas se quedó con casi 14rem vacíos a 1440 (las filas las marcan
+  Acidez + Dulzor). Agrandar «un poco» las notas no bastaba: subí título y
+  texto, y pasé de 4 a 8 ejemplos. Lo medí otra vez: 2,2rem.
+- Para agrandar las notas, la primera versión repetía
+  `cata-nota px-4 py-1 text-base lg:text-lg` en cada `li`, pisando la
+  utilidad con clases sueltas. Lo cambié por una utilidad propia,
+  `nota-ejemplo`, con el tamaño `lg` dentro (`@variant lg`), y la
+  `cata-nota` de las tarjetas de cafés no se toca.
+- El verificador avisó de algo que el criterio no medía: a 1024 (justo al
+  entrar en `lg`, columnas de 212px) Notas y Cuerpo quedan con ~6,5rem
+  libres. Queda anotado en la verificación.

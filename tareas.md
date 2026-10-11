@@ -166,7 +166,7 @@ bajo los botones del hero.
 - CR2.4 El nombre accesible del logo sigue siendo «tueste» (el icono no se lee) — árbol de accesibilidad — O8
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · 3 SVG con los 4 `d` idénticos al original de Lucide; ningún ☕ · pegatina sin solapes con sello ni texto a 360/768/1440 (10,46:1) · precio 9,96:1 · logo = `link "tueste"` · 0 contraste fallido, sin scroll horizontal, foco 12/12 + 11/11, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 92 (LCP 3,3 s) · T2, T3, T9 y R1 sin regresiones
 
-## R3 · Bento sin huecos (revisión 1) — ⬜
+## R3 · Bento sin huecos (revisión 1) — ✅
 **Qué:** quitar `lg:auto-rows-fr`; Cuerpo con barras de intensidad por café;
 notas más grandes en Notas; sombra tomate en la caja oscura; mosaico a 768
 sin cajas medio vacías.
@@ -176,7 +176,7 @@ sin cajas medio vacías.
 - CR3.2 Sigue cumpliendo P6 a 1440: al menos un `span 2` en columna y otro en fila, sin huecos en la rejilla; a 768, sin huecos; a 360, 1 columna — `browser_evaluate` — P6, C6.2, C6.3
 - CR3.3 Cuerpo muestra una barra de intensidad por café (`ul` con nombre + barra decorativa) con un texto que la explique para el lector de pantalla — leer HTML + árbol de accesibilidad — brief §Detalle memorable (C)
 - CR3.4 La caja oscura tiene sombra visible: token `--shadow-pegatina-tomate` (o similar) en `@theme` y aplicado — leer `src/style.css` + captura — brief §Dirección visual
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · espacio libre máx. 3,69rem a 1440 (Cuerpo) y 0 a 768 · rejilla 4×3 / 2×5 / 1 col sin huecos · 6 barras con «cuerpo N de 5» en el árbol de accesibilidad · sombra tomate calculada · contraste mín. 5,37:1, sin scroll horizontal, foco 13/13, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 91 (LCP 3,3 s, igual) · T5, T6 y R1 sin regresiones; resto de la página igual que HEAD · aviso: a 1024 (entrada de `lg`) Notas y Cuerpo quedan con ~6,5rem libres (CR3.1 solo mide 768 y 1440)
 
 ## R4 · Planes: elegir plan y empujar el de entrada (revisión 2, 3a, 8 y 9) — ⬜
 **Qué:** aviso sin JS en `#newsletter` cuando se llega desde un plan; pegatina

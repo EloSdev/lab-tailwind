@@ -43,6 +43,9 @@
   /* La sombra dura en crema: para pegatinas sobre fondo espresso (el pie),
      donde la sombra espresso no se vería. */
   --shadow-pegatina-crema: 4px 4px 0 var(--color-crema);
+  /* Y en tomate: para la caja espresso del glosario, donde una sombra
+     espresso se funde con la caja y no se ve como pegatina. */
+  --shadow-pegatina-tomate: 4px 4px 0 var(--color-tomate-500);
 
   /* Movimiento del hero (brief §Movimiento). Se usan siempre con
      motion-safe:, así con reduced-motion ni giran ni aparecen: se ven quietos. */
@@ -305,6 +308,42 @@
   background-color: var(--color-espresso-100);
   border: 2px solid var(--color-espresso-900);
   border-radius: 9999px;
+}
+
+/* La nota de cata en grande: los ejemplos de la caja Notas del glosario,
+   que es la protagonista del bento. Crema para que salte sobre el tomate. */
+@utility nota-ejemplo {
+  display: inline-block;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 4);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-espresso-900);
+  background-color: var(--color-crema);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-pegatina);
+
+  @variant lg {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Barra de cuerpo (glosario): el carril en crema y, dentro, un <span> en
+   tomate cuyo ancho (w-1/5 … w-full, en el HTML) es el cuerpo de cada café.
+   Es decorativa: el dato va en texto para el lector de pantalla. */
+@utility cuerpo-barra {
+  flex: 1;
+  height: calc(var(--spacing) * 3);
+  overflow: hidden;
+  border: 2px solid var(--color-crema);
+  border-radius: 9999px;
+
+  & > span {
+    display: block;
+    height: 100%;
+    background-color: var(--color-tomate-500);
+  }
 }
 
 /* Título de columna del pie (se repite 4 veces). */
