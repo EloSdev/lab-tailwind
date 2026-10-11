@@ -100,7 +100,7 @@ tecnicismos.
 - C6.4 Colores de las cajas solo con tokens (crema, menta, tomate, espresso), sin `[#…]` — `check-estatico` — O2
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: cajas con espacio vacío a 1440 (Notas, Cuerpo) y a 768 (Acidez), la sombra de la caja oscura apenas se ve (para design-reviewer) · mosaico 4×3 sin huecos a 1440 (Notas 2×2, Cuerpo 1×2, Tueste y Proceso 2×1), 2 columnas a 768, 1 a 360 · contraste mín. 5,37:1 en 29 textos · iconos Lucide comparados con los originales: coinciden · Lighthouse a11y/BP/SEO 100, Rendimiento 93–94 · T1–T5 sin regresiones
 
-## T7 · Planes de suscripción — ⬜
+## T7 · Planes de suscripción — ✅
 **Qué:** sección `#planes` con 3 planes (`article`), el del centro destacado
 con etiqueta «⭐ Más popular» colocada con `absolute`.
 **Depende de:** T1, T2 (botón)
@@ -109,7 +109,7 @@ con etiqueta «⭐ Más popular» colocada con `absolute`.
 - C7.2 Etiqueta con `position: absolute` dentro de una tarjeta `position: relative` — `browser_evaluate` — P3
 - C7.3 El plan destacado se distingue (borde/fondo/escala distintos) y es el 2.º a 360 y el central a 1440 — captura + `browser_evaluate` — P3, brief §Decidido
 - C7.4 A 360 los planes apilados; a 1440 en fila — `browser_evaluate` — brief §Móvil
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: botones a `#newsletter` aún sin destino (T9), «Más popular» va antes del `h3` (no se oye al saltar por encabezados), a 768 h2 a la izquierda y tarjetas centradas · etiqueta `absolute` en article `relative` sin tapar el h3 en 3 anchos, destacado central a 1440 y 2.º a 360 · «12,90 € al mes» en el árbol de accesibilidad · 16/16 interactivos con foco visible · Lighthouse a11y/BP/SEO 100, Rendimiento 93 · T1–T6 sin regresiones
 
 ## T8 · Preguntas frecuentes — ⬜
 **Qué:** sección `#faq` con ≥ 5 preguntas de principiante en

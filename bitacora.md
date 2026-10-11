@@ -284,3 +284,40 @@ efecto de aplastar) y `cata-nota`, sin tocar `style.css`. Iconos de Lucide.
   de Cuerpo tienen mucho espacio vacío, y la sombra de la caja oscura
   (espresso sobre espresso) apenas se ve, así que pierde el efecto pegatina.
   Y el nombre `paso-tarjeta` ya no describe todos sus usos.
+## 9 · T7 · Planes de suscripción (2026-10-11)
+
+### Prompt
+
+"Construye los planes después del glosario: 3 `article` con nombre propio,
+precio al mes, ventajas y botón; el del centro destacado con una etiqueta
+«⭐ Más popular» colocada con `absolute`. Precios coherentes con las bolsas
+sueltas de los cafés (12,90–16,90 €)."
+
+### Qué me dio
+
+Curioso (1 bolsa, 12,90 €/mes), Mañanero ⭐ (2 bolsas, 24,90 €, 12,45 € la
+bolsa) e Insomne (4 bolsas, 45,90 €, 11,48 € la bolsa). Rejilla de 1 columna
+estrecha y centrada (`max-w-md`) hasta `lg`, y 3 columnas desde `lg`. El
+destacado: fondo tomate, sombra larga y `lg:-my-6` en su celda para que
+sobresalga 24 px por arriba y por abajo sin usar `scale`. Dos utilidades
+nuevas: `plan-etiqueta` (la pegatina, `absolute` sobre el article, que es
+`relative` por `paso-tarjeta`) y `plan-ventaja` (fila con el check de
+Lucide).
+
+### Qué corregí y por qué
+
+- A 768 px las tres columnas dejaban unos 165 px de texto por tarjeta y el
+  precio grande no cabía: se apilan hasta `lg`.
+- El precio se ve como «12,90 € /mes», pero «/mes» lleva `aria-hidden` y un
+  «al mes» en `sr-only`: la verificación comprobó en el árbol de
+  accesibilidad que se lee «12,90 € al mes». Igual con la ⭐ decorativa.
+- El botón del destacado no podía ser tomate sobre tarjeta tomate: va en
+  espresso con texto crema (15,3:1).
+- La verificación comprobó la aritmética de «te sale a X € la bolsa»
+  (24,90 / 2 = 12,45; 45,90 / 4 = 11,475 ≈ 11,48).
+- Pendiente:
+  - Los botones apuntan a `#newsletter`, que no existe hasta T9.
+  - «Más popular» va antes del `h3`, así que quien salta de encabezado en
+    encabezado no lo oye.
+  - El brief quería empujar el plan de entrada, pero P3 destaca el del
+    centro. Lo decido en la revisión de diseño.

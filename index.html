@@ -466,7 +466,84 @@
           </li>
         </ul>
       </section>
-    </main>
+
+      <!-- Planes (P3): tres suscripciones; el del centro, destacado.
+           Rejilla de 1 columna (estrecha y centrada) hasta lg, y 3 desde lg:
+           a 768 las tres no caben sin apretar precio y ventajas.
+           Las tarjetas no se pulsan (solo su botón): forma de pegatina
+           (paso-tarjeta), sin el efecto de aplastar.
+           Destacado: fondo tomate, sombra más larga y, en lg, -my-6 en su <li>
+           para que sobresalga por arriba y por abajo sin escalar nada. -->
+      <section id="planes" aria-labelledby="planes-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
+        <h2 id="planes-titulo" class="font-display text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
+          ¿Cuánto café cabe en tu mes?
+        </h2>
+        <p class="mt-4 max-w-xl text-lg text-espresso-700">
+          Elige un plan y olvídate de ir a por café. Sin permanencia: lo pausas,
+          lo cambias o lo cancelas cuando quieras, y el envío va siempre de
+          nuestra cuenta.
+        </p>
+
+        <ul role="list" class="mx-auto mt-14 grid max-w-md grid-cols-1 gap-12 lg:max-w-none lg:grid-cols-3 lg:gap-8">
+          <li>
+            <article class="paso-tarjeta flex h-full flex-col bg-espresso-50">
+              <h3 class="font-display text-3xl font-bold">Curioso</h3>
+              <p class="mt-1">Para estrenarte sin compromiso.</p>
+              <p class="mt-6 font-display">
+                <span class="text-5xl leading-none font-extrabold">12,90 €</span>
+                <span aria-hidden="true" class="text-xl font-bold">/mes</span><span class="sr-only">al mes</span>
+              </p>
+              <p class="mt-2 text-sm">1 bolsa de 250 g al mes, unas 30 tazas. Sea el café que sea.</p>
+              <ul role="list" class="mt-6 mb-8 space-y-3">
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Eliges tu café entre los seis del mes</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>En grano o molido para tu cafetera</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Envío gratis a casa</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Lo pausas o lo cancelas cuando quieras</li>
+              </ul>
+              <a href="#newsletter" class="btn-pegatina mt-auto justify-center px-4 py-3 bg-tomate-500 text-espresso-900">Elegir Curioso</a>
+            </article>
+          </li>
+
+          <li class="lg:-my-6">
+            <article class="paso-tarjeta flex h-full flex-col bg-tomate-500 shadow-pegatina-lg">
+              <p class="plan-etiqueta rotate-3 bg-menta"><span aria-hidden="true">⭐ </span>Más popular</p>
+              <h3 class="font-display text-3xl font-bold">Mañanero</h3>
+              <p class="mt-1">Para quien no perdona el café del desayuno.</p>
+              <p class="mt-6 font-display">
+                <span class="text-5xl leading-none font-extrabold">24,90 €</span>
+                <span aria-hidden="true" class="text-xl font-bold">/mes</span><span class="sr-only">al mes</span>
+              </p>
+              <p class="mt-2 text-sm">2 bolsas de 250 g al mes. Te sale a 12,45 € la bolsa.</p>
+              <ul role="list" class="mt-6 mb-8 space-y-3">
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Dos cafés iguales o distintos: tú decides</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Ficha de cata para saber qué estás bebiendo</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Envío gratis a casa</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Lo pausas o lo cancelas cuando quieras</li>
+              </ul>
+              <a href="#newsletter" class="btn-pegatina mt-auto justify-center px-4 py-3 bg-espresso-900 text-crema">Elegir Mañanero</a>
+            </article>
+          </li>
+
+          <li>
+            <article class="paso-tarjeta flex h-full flex-col bg-espresso-50">
+              <h3 class="font-display text-3xl font-bold">Insomne</h3>
+              <p class="mt-1">Para casas cafeteras y oficinas con sueño.</p>
+              <p class="mt-6 font-display">
+                <span class="text-5xl leading-none font-extrabold">45,90 €</span>
+                <span aria-hidden="true" class="text-xl font-bold">/mes</span><span class="sr-only">al mes</span>
+              </p>
+              <p class="mt-2 text-sm">4 bolsas de 250 g al mes. Te sale a 11,48 € la bolsa.</p>
+              <ul role="list" class="mt-6 mb-8 space-y-3">
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Repite tu favorito o pruébalos todos</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Ficha de cata en cada bolsa</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Envío gratis a casa</li>
+                <li class="plan-ventaja"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>Lo pausas o lo cancelas cuando quieras</li>
+              </ul>
+              <a href="#newsletter" class="btn-pegatina mt-auto justify-center px-4 py-3 bg-tomate-500 text-espresso-900">Elegir Insomne</a>
+            </article>
+          </li>
+        </ul>
+      </section>    </main>
 
     <footer></footer>
   </body>

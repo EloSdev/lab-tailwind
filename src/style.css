@@ -182,6 +182,39 @@
   box-shadow: var(--shadow-pegatina);
 }
 
+/* Etiqueta «Más popular» del plan destacado: pegatina que asoma por el
+   borde superior derecho de la tarjeta (que es relative por paso-tarjeta).
+   Mismo aspecto que cafe-proceso, pero colocada fuera de la caja. El giro y
+   el color, en el HTML. */
+@utility plan-etiqueta {
+  position: absolute;
+  top: calc(var(--spacing) * -4);
+  right: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-espresso-900);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-pegatina);
+}
+
+/* Fila de ventaja de un plan (12 en total): check + texto. El icono no
+   encoge si el texto ocupa dos líneas y baja un poco para centrarse con la
+   primera línea. */
+@utility plan-ventaja {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+
+  & svg {
+    flex-shrink: 0;
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+    margin-top: calc(var(--spacing) * 0.5);
+  }
+}
+
 /* Nota de cata como pegatina pequeña: se repite 18 veces (3 por tarjeta). */
 @utility cata-nota {
   display: inline-block;
