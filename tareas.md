@@ -122,7 +122,7 @@ con etiqueta «⭐ Más popular» colocada con `absolute`.
 - C8.4 Preguntas de principiante («¿Molido o en grano?», «¿Puedo cancelar?», «¿Qué cafetera necesito?») — leer HTML — brief §Contenido
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: foco de los summary fino y del mismo color que el borde («doble borde»), «eliges otro de los seis» puede sugerir que los orígenes no rotan · 6 details abren/cierran con Enter y Espacio a 360 y 1440, 22/22 interactivos con foco visible · giro con `transition-transform` + `motion-reduce:transition-none` (con reduce: 180deg sin animación), aceptado por el verificador como cumplimiento de la intención de P7 · chevron-down comparado con Lucide: coincide · Lighthouse a11y/BP/SEO 100, Rendimiento 94 · T1–T7 sin regresiones
 
-## T9 · Pie con newsletter — ⬜
+## T9 · Pie con newsletter — ✅
 **Qué:** `footer` con ≥ 3 columnas (enlaces, contacto, redes) + newsletter y
 línea de copyright con borde superior.
 **Depende de:** T1
@@ -131,7 +131,8 @@ línea de copyright con borde superior.
 - C9.2 Enlaces en `ul > li > a`; iconos de redes con nombre accesible (`aria-label` o texto oculto) — `browser_evaluate` + `sonda-pagina` (interactivos) — O1, O8
 - C9.3 Línea de copyright con `borderTopWidth` > 0 — `browser_evaluate` — O7
 - C9.4 Campo de email con `<label>` asociado (`labels.length ≥ 1`) y botón alcanzable con Tab — `browser_evaluate` + `sonda-foco` — O8
-**Verificación:** —
+- C9.5 Existe un elemento con `id="newsletter"` (destino de los 3 botones de planes de T7) — `browser_evaluate` — T7
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: redes ficticias con `href="#"`, newsletter sin backend (el correo queda en la URL, sin confirmación) · pie 4 / 2×2 / 1 columnas a 1440 / 768 / 360, `#newsletter` es el destino de los planes, 33/33 interactivos con foco visible · franja crema de la captura a 360 descartada (artefacto de la captura: el pie llega al final) · iconos Lucide comparados: coinciden · unidades: px solo en bordes, sombras y outline · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · T1–T8 sin regresiones
 
 ## T10 · README, capturas y verificación del conjunto — ⬜
 **Qué:** `README.md` con tema, cómo arrancar, opción de Tailwind (Vite) y por

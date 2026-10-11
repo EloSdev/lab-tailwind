@@ -40,6 +40,9 @@
   /* La misma sombra, más larga: hover de lo que «se aplasta» (sube 2 px y
      la sombra crece 2 px, así la base parece quedarse en su sitio). */
   --shadow-pegatina-lg: 6px 6px 0 var(--color-espresso-900);
+  /* La sombra dura en crema: para pegatinas sobre fondo espresso (el pie),
+     donde la sombra espresso no se vería. */
+  --shadow-pegatina-crema: 4px 4px 0 var(--color-crema);
 
   /* Movimiento del hero (brief §Movimiento). Se usan siempre con
      motion-safe:, así con reduced-motion ni giran ni aparecen: se ven quietos. */
@@ -295,4 +298,67 @@
   background-color: var(--color-espresso-100);
   border: 2px solid var(--color-espresso-900);
   border-radius: 9999px;
+}
+
+/* Título de columna del pie (se repite 4 veces). */
+@utility pie-titulo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Enlace del pie (9 en total): texto crema sobre espresso-900.
+   - min-height 2.75rem (44 px): zona cómoda para el dedo aunque el texto
+     sea corto; inline-flex para centrar icono y texto.
+   - Hover y pulsación: subrayado (el color no cambia: la menta no es para
+     texto). El desplazamiento del subrayado en em, para que crezca con la letra.
+   - Foco: outline crema, que contrasta con el fondo espresso del pie. */
+@utility pie-enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  min-height: 2.75rem;
+  border-radius: var(--radius-md);
+  text-underline-offset: 0.25em;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  &:active {
+    text-decoration-line: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-crema);
+    outline-offset: 2px;
+  }
+
+  & svg {
+    flex-shrink: 0;
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+}
+/* Campo de texto del pie (newsletter). Es uno solo, pero con el foco
+   pasaba de 12 clases. Fondo crema y borde espresso como las pegatinas;
+   min-height (no height) para que crezca si el usuario agranda la letra.
+   Foco: outline espresso separado 2 px (sobre fondo menta, 10,5:1). */
+@utility pie-campo {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  color: var(--color-espresso-900);
+  background-color: var(--color-crema);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-lg);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: 2px;
+  }
 }

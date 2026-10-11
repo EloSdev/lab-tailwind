@@ -652,6 +652,106 @@
       </section>
     </main>
 
-    <footer></footer>
+    <!-- Pie: fondo espresso para cerrar la página (todo lo de arriba es
+         claro). 1 columna en móvil, 2 desde sm y 4 desde lg.
+         Títulos de columna en h2: el pie está fuera de <main> y cada columna
+         es un bloque propio, al mismo nivel que las secciones (sin saltos). -->
+    <footer class="bg-espresso-900 text-crema">
+      <div class="mx-auto max-w-6xl px-4 pt-16 pb-8 md:px-8">
+        <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div>
+            <p class="font-display text-3xl font-extrabold tracking-tight">
+              <span aria-hidden="true">☕</span> tueste
+            </p>
+            <p class="mt-4 max-w-xs text-espresso-200">
+              Café de especialidad tostado cada semana y enviado a tu casa.
+              Sin postureo y sin tener que saber nada.
+            </p>
+          </div>
+
+          <nav aria-label="Pie">
+            <h2 class="pie-titulo">La página</h2>
+            <ul role="list" class="mt-3">
+              <li><a href="#como-funciona" class="pie-enlace">Cómo funciona</a></li>
+              <li><a href="#cafes" class="pie-enlace">Cafés del mes</a></li>
+              <li><a href="#glosario" class="pie-enlace">Notas de cata</a></li>
+              <li><a href="#planes" class="pie-enlace">Planes</a></li>
+              <li><a href="#faq" class="pie-enlace">Preguntas</a></li>
+            </ul>
+          </nav>
+
+          <!-- Contacto y redes. Iconos Lucide (mail, map-pin, camera, music,
+               video): Lucide no tiene logos de marcas, así que van iconos
+               genéricos y el nombre de la red en texto visible.
+               Los perfiles son ficticios: href="#". -->
+          <div>
+            <h2 class="pie-titulo">Hablemos</h2>
+            <address class="mt-3 not-italic">
+              <a href="mailto:hola@tueste.example" class="pie-enlace">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+                hola@tueste.example
+              </a>
+              <p class="mt-2 flex gap-2 text-espresso-200">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 size-5 shrink-0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" /></svg>
+                <span>Calle del Grano Tostado, 12<br />28045 Madrid</span>
+              </p>
+            </address>
+
+            <h3 class="mt-6 font-display text-lg font-bold">Síguenos</h3>
+            <ul role="list" class="mt-1">
+              <li>
+                <a href="#" class="pie-enlace">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" /><circle cx="12" cy="13" r="3" /></svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="#" class="pie-enlace">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a href="#" class="pie-enlace">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" /><rect x="2" y="6" width="14" height="12" rx="2" /></svg>
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter: destino de los botones «Elegir…» de los planes.
+               Pegatina menta con sombra dura crema (la espresso no se vería
+               sobre el pie) y etiqueta girada, como la de «Más popular».
+               Sin backend: action="#newsletter" recarga la página y vuelve
+               aquí; el correo no se guarda en ningún sitio. -->
+          <div id="newsletter" class="relative p-6 text-espresso-900 bg-menta border-2 border-crema shadow-pegatina-crema rounded-2xl">
+            <p class="plan-etiqueta rotate-3 bg-tomate-500">1 correo al mes</p>
+            <h2 class="pie-titulo">El café del mes, antes que nadie</h2>
+            <p class="mt-2">Te contamos qué tostamos y cómo sacarle partido. Nada más.</p>
+            <form action="#newsletter" class="mt-4">
+              <label for="newsletter-email" class="block font-semibold">Tu correo</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                required
+                autocomplete="email"
+                class="pie-campo mt-1"
+              />
+              <button type="submit" class="btn-pegatina mt-4 w-full justify-center px-5 py-2.5 bg-tomate-500 text-espresso-900">
+                Apúntame
+              </button>
+            </form>
+            <p class="mt-3 text-sm">Te das de baja con un clic, cuando quieras.</p>
+          </div>
+        </div>
+
+        <div class="mt-16 flex flex-col gap-2 pt-6 text-sm text-espresso-200 border-t-2 border-espresso-600 sm:flex-row sm:justify-between">
+          <p>© 2026 Tueste. Tostado en Madrid, bebido donde quieras.</p>
+          <p>Fotos de Unsplash.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

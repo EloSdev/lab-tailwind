@@ -361,3 +361,42 @@ lectores pierden el encabezado o el botón.
 - Pendiente para diseño: el foco de las preguntas es fino y del mismo color
   que el borde (parece un doble borde), y «eliges otro de los seis» puede
   hacer pensar que los orígenes no cambian cada mes.
+## 11 · T9 · Pie con newsletter (2026-10-11)
+
+### Prompt
+
+"Construye el pie: al menos 3 columnas que se apilen en móvil (marca,
+enlaces, contacto y redes, newsletter con `id="newsletter"`), copyright con
+borde superior. Unidades según el tema 05: letra y espaciados en `rem`, `px`
+solo en bordes, sombras y outline. Iconos de redes solo si existen de verdad
+en Lucide."
+
+### Qué me dio
+
+Pie oscuro (`espresso-900` con texto crema) de 4 columnas en escritorio,
+2×2 en tablet y apilado en móvil. La newsletter es una pegatina menta con
+`<label>` visible, `type="email" required autocomplete="email"` y el botón
+`btn-pegatina`; es el destino de los botones de los planes. Token nuevo
+`--shadow-pegatina-crema` (la sombra espresso no se ve sobre fondo oscuro) y
+tres utilidades: `pie-titulo`, `pie-enlace` (44 px de alto táctil) y
+`pie-campo`.
+
+### Qué corregí y por qué
+
+- **Unidades**: me di cuenta de que había `px` en el CSS y lo revisé con el
+  tema 05 de Lemoncode. Todos estaban en bordes, sombras, outline, el radio
+  de píldora y el desplazamiento del botón (que tiene que medir lo mismo que
+  su sombra). Letra y espaciados ya iban en `rem` (`--spacing` = 0,25rem).
+  El único caso dudoso, el `text-[11px]` del sello, son unidades del
+  `viewBox` del SVG y escalan con él: lo dejé. Para el pie se le pasó la
+  regla de forma explícita y la verificación lo comprobó.
+- Lucide no tiene iconos de marcas: el agente comprobó que `instagram` y
+  `youtube` dan 404 y usó iconos genéricos que sí existen (cámara, música,
+  vídeo) con el nombre de la red visible. La verificación comparó los 5
+  iconos con los originales: coinciden.
+- El agente vio una franja crema bajo el pie en una captura a 360 px. La
+  verificación demostró que era cosa de la captura: el pie llega justo al
+  final de la página.
+- Pendiente, honesto para una maqueta: las redes son ficticias
+  (`href="#"`) y la newsletter no tiene backend (al enviar, el correo queda
+  en la URL y no hay mensaje de confirmación).
