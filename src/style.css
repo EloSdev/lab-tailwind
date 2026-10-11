@@ -215,6 +215,76 @@
   }
 }
 
+/* Pregunta frecuente (P4) como pegatina: forma de paso-tarjeta sin el
+   aplastado (no es un botón de acción, solo se despliega). El fondo cambia
+   al abrirla con open: en el HTML. Se repite 6 veces. */
+@utility faq-item {
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-xl);
+  background-color: var(--color-espresso-50);
+  box-shadow: var(--shadow-pegatina);
+}
+
+/* El <summary> entero es la zona clicable (≥ 44 px de alto).
+   - Sin el triángulo por defecto (list-style y ::-webkit-details-marker).
+   - Hover/active: oscurece un 8 % el fondo que haya debajo (espresso-50
+     cerrada, menta abierta), así sirve en los dos estados.
+   - Foco: el borde de la pegatina está pegado al summary, así que un
+     outline hacia fuera caería encima del borde y no se vería; va hacia
+     dentro (offset -6px: 4 px de hueco tras los 2 px del propio outline). */
+@utility faq-pregunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+  min-height: 2.75rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.25;
+  border-radius: calc(var(--radius-xl) - 2px); /* radio interior de la pegatina */
+  list-style: none;
+  cursor: pointer;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: color-mix(in oklab, var(--color-espresso-900) 8%, transparent);
+    }
+  }
+
+  &:active {
+    background-color: color-mix(in oklab, var(--color-espresso-900) 8%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: -6px;
+  }
+}
+
+/* Pegatina redonda con la flecha. El giro se pone en el HTML, en el svg
+   (group-open:rotate-180). */
+@utility faq-flecha {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: calc(var(--spacing) * 9);
+  height: calc(var(--spacing) * 9);
+  background-color: var(--color-crema);
+  border: 2px solid var(--color-espresso-900);
+  border-radius: 9999px;
+
+  & svg {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+}
+
 /* Nota de cata como pegatina pequeña: se repite 18 veces (3 por tarjeta). */
 @utility cata-nota {
   display: inline-block;

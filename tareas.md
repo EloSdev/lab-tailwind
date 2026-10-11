@@ -111,7 +111,7 @@ con etiqueta «⭐ Más popular» colocada con `absolute`.
 - C7.4 A 360 los planes apilados; a 1440 en fila — `browser_evaluate` — brief §Móvil
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: botones a `#newsletter` aún sin destino (T9), «Más popular» va antes del `h3` (no se oye al saltar por encabezados), a 768 h2 a la izquierda y tarjetas centradas · etiqueta `absolute` en article `relative` sin tapar el h3 en 3 anchos, destacado central a 1440 y 2.º a 360 · «12,90 € al mes» en el árbol de accesibilidad · 16/16 interactivos con foco visible · Lighthouse a11y/BP/SEO 100, Rendimiento 93 · T1–T6 sin regresiones
 
-## T8 · Preguntas frecuentes — ⬜
+## T8 · Preguntas frecuentes — ✅
 **Qué:** sección `#faq` con ≥ 5 preguntas de principiante en
 `<details>`/`<summary>`, con flecha que gira al abrir.
 **Depende de:** T1
@@ -120,7 +120,7 @@ con etiqueta «⭐ Más popular» colocada con `absolute`.
 - C8.2 Se abre con Tab + Enter desde el teclado (`open === true`) — `browser_press_key` + `browser_evaluate` — P4, O8
 - C8.3 La flecha usa `group` + `group-open:rotate-180` — `check-estatico` — P4
 - C8.4 Preguntas de principiante («¿Molido o en grano?», «¿Puedo cancelar?», «¿Qué cafetera necesito?») — leer HTML — brief §Contenido
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: foco de los summary fino y del mismo color que el borde («doble borde»), «eliges otro de los seis» puede sugerir que los orígenes no rotan · 6 details abren/cierran con Enter y Espacio a 360 y 1440, 22/22 interactivos con foco visible · giro con `transition-transform` + `motion-reduce:transition-none` (con reduce: 180deg sin animación), aceptado por el verificador como cumplimiento de la intención de P7 · chevron-down comparado con Lucide: coincide · Lighthouse a11y/BP/SEO 100, Rendimiento 94 · T1–T7 sin regresiones
 
 ## T9 · Pie con newsletter — ⬜
 **Qué:** `footer` con ≥ 3 columnas (enlaces, contacto, redes) + newsletter y

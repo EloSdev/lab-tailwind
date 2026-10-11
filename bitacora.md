@@ -321,3 +321,43 @@ Lucide).
     encabezado no lo oye.
   - El brief quería empujar el plan de entrada, pero P3 destaca el del
     centro. Lo decido en la revisión de diseño.
+## 10 · T8 · Preguntas frecuentes (2026-10-11)
+
+### Prompt
+
+"Construye la FAQ después de los planes: 6 preguntas de principiante en
+`<details class="group">` sin JavaScript, con una flecha que gire al abrir
+(`group-open:rotate-180`), y la transición con `motion-safe:`. Respuestas que
+no contradigan lo que ya dice la página."
+
+### Qué me dio
+
+«Pregunta sin miedo»: a 1440, título en la columna izquierda (1/3) y las
+6 preguntas en los 2/3 de la derecha (`lg:grid-cols-3` + `lg:col-span-2`);
+apilado por debajo de `lg`. Cada pregunta es una pegatina que pasa a menta al
+abrirse (`open:bg-menta`), con la flecha `chevron-down` de Lucide. Tres
+utilidades nuevas: `faq-item`, `faq-pregunta` y `faq-flecha`. No metió `h3`
+dentro del `summary`, porque el `summary` funciona como un botón y algunos
+lectores pierden el encabezado o el botón.
+
+### Qué corregí y por qué
+
+- **La IA no hizo lo que le pedí, y tenía razón.** Le pedí la transición
+  con `motion-safe:`, pero `check-estatico` marca FALLA el
+  `group-open:rotate-180` si no lleva `motion-safe:` o `motion-reduce:`, y si
+  ponía `motion-safe:` en el giro, con movimiento reducido la flecha no
+  giraría y se perdería la señal de abierto/cerrado. Dejó
+  `transition-transform group-open:rotate-180 motion-reduce:transition-none`:
+  con reduce la flecha queda girada al instante, sin animación. La
+  verificación lo dio por bueno: lo que se mueve es la transición, y con
+  reduce desaparece.
+- La flecha la copió de memoria; la verificación la comparó con el fichero
+  original de Lucide y coincide.
+- El comentario del CSS decía que el foco iba «4 px hacia dentro» y el
+  código ponía `-6px`; corregí el comentario.
+- Las respuestas no contradicen la página (sin permanencia, envío de nuestra
+  cuenta, 250 g ≈ 30 tazas…). Añaden dos datos nuevos compatibles: «2 o 3
+  días laborables» y que las cafeteras de cápsulas no sirven.
+- Pendiente para diseño: el foco de las preguntas es fino y del mismo color
+  que el borde (parece un doble borde), y «eliges otro de los seis» puede
+  hacer pensar que los orígenes no cambian cada mes.
