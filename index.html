@@ -337,6 +337,135 @@
           </li>
         </ul>
       </section>
+
+      <!-- Glosario en bento: va entre los cafés y los planes (brief §5).
+           Son términos sueltos, sin orden → <ul>; cada caja lleva su <h3>
+           (un <dl> no admite encabezados dentro del <dt>).
+           Mosaico a lg (4 columnas × 3 filas, sin huecos):
+             Notas 2×2 | Acidez 1×1 | Cuerpo 1×2
+                       | Dulzor 1×1 |
+             Tueste 2×1             | Proceso 2×1
+           A sm (2 columnas): Notas y Proceso ocupan la fila entera; el resto,
+           de dos en dos. Las cajas no se pulsan: forma de pegatina
+           (paso-tarjeta), sin el efecto de aplastar. -->
+      <section id="glosario" aria-labelledby="glosario-titulo" class="mx-auto max-w-6xl px-4 py-12 md:px-8 md:py-20">
+        <h2 id="glosario-titulo" class="font-display text-4xl leading-tight font-extrabold tracking-tight md:text-5xl">
+          ¿Qué es eso de las notas de cata?
+        </h2>
+        <p class="mt-4 max-w-xl text-lg text-espresso-700">
+          En la bolsa pone «Sabe a fresa» y piensas: ¿le han echado fruta? Aquí
+          tienes el diccionario de bolsillo. Seis palabras y ya hablas café.
+        </p>
+
+        <ul role="list" class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-4">
+          <li class="paso-tarjeta flex flex-col bg-tomate-500 sm:col-span-2 lg:row-span-2">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-12 lg:size-16">
+              <path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z" />
+              <path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z" />
+              <path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12" />
+              <path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z" />
+            </svg>
+            <h3 class="mt-4 font-display text-3xl font-bold lg:text-4xl">Notas de cata</h3>
+            <p class="mt-3 max-w-prose text-lg lg:text-xl">
+              No le echamos fresas, prometido. Son aromas que el grano trae de
+              serie, según la planta, dónde crece y cómo se tuesta. Lo que pone
+              en «Sabe a» es lo que te va a recordar el primer sorbo.
+            </p>
+            <!-- mt-auto: en la caja alta (lg) los ejemplos bajan al fondo. -->
+            <div class="mt-auto pt-6">
+              <p class="text-sm font-semibold">Por ejemplo, sabe a</p>
+              <ul role="list" class="mt-2 flex flex-wrap gap-2">
+                <li class="cata-nota">chocolate</li>
+                <li class="cata-nota">frutos rojos</li>
+                <li class="cata-nota">caramelo</li>
+                <li class="cata-nota">floral</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="paso-tarjeta bg-menta">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
+              <path d="M21.66 17.67a1.08 1.08 0 0 1-.04 1.6A12 12 0 0 1 4.73 2.38a1.1 1.1 0 0 1 1.61-.04z" />
+              <path d="M19.65 15.66A8 8 0 0 1 8.35 4.34" />
+              <path d="m14 10-5.5 5.5" />
+              <path d="M14 17.85V10H6.15" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">Acidez</h3>
+            <p class="mt-2">
+              La chispa que te hace salivar, como un mordisco de manzana verde.
+              No es ardor de estómago: aquí ácido significa vivo y jugoso.
+            </p>
+          </li>
+
+          <li class="paso-tarjeta flex flex-col bg-espresso-900 text-crema lg:row-span-2">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
+              <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
+              <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">Cuerpo</h3>
+            <p class="mt-2">
+              Lo que pesa el café en la boca: ligero como un té o denso como un
+              chocolate caliente. Ni mejor ni peor, cuestión de gustos.
+            </p>
+            <div class="mt-auto pt-6">
+              <p class="text-sm font-semibold">De ligero a denso, este mes:</p>
+              <ul role="list" class="mt-2 space-y-1">
+                <li>Etiopía, casi un té</li>
+                <li>Colombia, redondo</li>
+                <li>Brasil, con mucho cuerpo</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="paso-tarjeta bg-espresso-100">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
+              <path d="M10 7v10.9" />
+              <path d="M14 6.1V17" />
+              <path d="M16 7V3a1 1 0 0 1 1.707-.707 2.5 2.5 0 0 0 2.152.717 1 1 0 0 1 1.131 1.131 2.5 2.5 0 0 0 .717 2.152A1 1 0 0 1 21 8h-4" />
+              <path d="M16.536 7.465a5 5 0 0 0-7.072 0l-2 2a5 5 0 0 0 0 7.07 5 5 0 0 0 7.072 0l2-2a5 5 0 0 0 0-7.07" />
+              <path d="M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">Dulzor</h3>
+            <p class="mt-2">
+              El azúcar del propio grano, que se carameliza al tostarlo. Por
+              eso sabe a caramelo o a miel sin echarle ni una cucharada.
+            </p>
+          </li>
+
+          <li class="paso-tarjeta bg-espresso-50 lg:col-span-2">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
+              <path d="M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z" />
+              <path d="M5.341 10.62a4 4 0 1 0 5.279-5.28" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">Tueste</h3>
+            <p class="mt-2">
+              Cuánto tiempo pasa el grano en el tostador. <strong>Claro:</strong>
+              más fruta y más chispa. <strong>Medio:</strong> equilibrado, para
+              todos los públicos. <strong>Oscuro:</strong> más amargo y tostadito,
+              el de toda la vida.
+            </p>
+          </li>
+
+          <li class="paso-tarjeta bg-menta sm:col-span-2">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-10">
+              <path d="M21 9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z" />
+              <path d="M15 3v5a1 1 0 0 0 1 1h5" />
+              <path d="M8 13h.01" />
+              <path d="M16 13h.01" />
+              <path d="M10 16s.8 1 2 1c1.3 0 2-1 2-1" />
+            </svg>
+            <h3 class="mt-4 font-display text-2xl font-bold">Proceso</h3>
+            <p class="mt-2">
+              Cómo se le quita al grano la fruta que lo envuelve, y es lo que
+              pone en la pegatina de cada café. <strong>Lavado:</strong> con
+              agua; sale limpio y brillante. <strong>Natural:</strong> se seca
+              dentro de la cereza y sabe más a fruta. <strong>Honey:</strong> se
+              seca con parte de la pulpa pegada; no lleva miel, se llama así por
+              lo pegajoso.
+            </p>
+          </li>
+        </ul>
+      </section>
     </main>
 
     <footer></footer>

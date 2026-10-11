@@ -252,3 +252,35 @@ pasar el ratón o al llegar con el teclado al botón), `cafe-proceso` y
   hero tarda 3,1 s en vez de 2,6 s): en móvil, Chrome descarga ya 3 fotos de
   tarjetas aunque llevan `loading="lazy"`, y compiten con la del hero.
   Pendiente si se va a por el D7 (más compresión o `srcset`).
+## 8 · T6 · Glosario de cata en bento (2026-10-11)
+
+### Prompt
+
+"Construye «¿Qué es eso de las notas de cata?» después de los cafés: 6 cajas
+(acidez, cuerpo, dulzor, notas de cata, tueste, proceso) con textos sin
+tecnicismos, en un bento: 1 columna en móvil, 2 en tablet y un mosaico en
+escritorio con al menos un `col-span-2` y un `row-span-2`, sin huecos. Las
+cajas no se pulsan."
+
+### Qué me dio
+
+Una lista `<ul role="list">` con 6 cajas (cada una con su `h3`; descartó
+`<dl>` porque dentro de un `<dt>` no cabe un encabezado). Mosaico de
+4 columnas × 3 filas en escritorio: Notas 2×2 (`sm:col-span-2 lg:row-span-2`),
+Cuerpo 1×2 (`lg:row-span-2`), Tueste y Proceso 2×1, con `lg:auto-rows-fr`
+para que todas las filas midan lo mismo. Sin `grid-flow-dense`: el orden del
+HTML ya encaja el mosaico. Reutilizó `paso-tarjeta` (forma de pegatina sin
+efecto de aplastar) y `cata-nota`, sin tocar `style.css`. Iconos de Lucide.
+
+### Qué corregí y por qué
+
+- Al copiar el icono `droplets` de Lucide se colaron unos números mal pegados
+  en el SVG; el agente los corrigió. La verificación descargó los 6 iconos
+  originales y comparó los trazados uno a uno: coinciden.
+- Pedí que la verificación revisara los textos por si decían algo falso del
+  café: ninguno lo es. Solo simplifican (el tueste no es solo tiempo, también
+  temperatura), algo aceptable para el público del brief.
+- Pendiente para la revisión de diseño: a 1440 la caja grande de Notas y la
+  de Cuerpo tienen mucho espacio vacío, y la sombra de la caja oscura
+  (espresso sobre espresso) apenas se ve, así que pierde el efecto pegatina.
+  Y el nombre `paso-tarjeta` ya no describe todos sus usos.

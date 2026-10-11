@@ -88,7 +88,7 @@ notas de cata, precio y botón; hover «se aplasta».
 - C5.5 Datos realistas: 6 orígenes distintos, precios entre 12 y 17 € con formato `14,90 €` — leer HTML — brief §Contenido
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: Rendimiento 97 → 93–94 (LCP 3,1 s; fotos lazy de tarjetas compiten con la del hero en móvil), nombre accesible «Lo quiero : Etiopía…» con espacio antes de «:» · grid 1/2/3 columnas a 360/768/1440, 6 fotos del mismo alto sin deformar, 13/13 interactivos con foco visible · créditos de las 6 fotos comprobados abriendo sus páginas · Lighthouse a11y/BP/SEO 100 · T1–T4 sin regresiones
 
-## T6 · Glosario de cata en bento — ⬜
+## T6 · Glosario de cata en bento — ✅
 **Qué:** sección «¿Qué es eso de las notas de cata?» con 5–6 cajas (acidez,
 cuerpo, dulzor, tueste, proceso…) de distintos tamaños, explicadas sin
 tecnicismos.
@@ -98,7 +98,7 @@ tecnicismos.
 - C6.2 Rejilla `grid` con al menos una celda `span 2` en columna y otra en fila a 1440 — `browser_evaluate` (`gridColumn`, `gridRow`) — P6
 - C6.3 A 360 todas las cajas en una columna (`gridTemplateColumns` con 1 valor) — `browser_evaluate` — brief §Móvil
 - C6.4 Colores de las cajas solo con tokens (crema, menta, tomate, espresso), sin `[#…]` — `check-estatico` — O2
-**Verificación:** —
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: cajas con espacio vacío a 1440 (Notas, Cuerpo) y a 768 (Acidez), la sombra de la caja oscura apenas se ve (para design-reviewer) · mosaico 4×3 sin huecos a 1440 (Notas 2×2, Cuerpo 1×2, Tueste y Proceso 2×1), 2 columnas a 768, 1 a 360 · contraste mín. 5,37:1 en 29 textos · iconos Lucide comparados con los originales: coinciden · Lighthouse a11y/BP/SEO 100, Rendimiento 93–94 · T1–T5 sin regresiones
 
 ## T7 · Planes de suscripción — ⬜
 **Qué:** sección `#planes` con 3 planes (`article`), el del centro destacado
