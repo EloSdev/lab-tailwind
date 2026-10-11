@@ -95,3 +95,38 @@ duplicados para el lector de pantalla. Añadió el token
   en el README para el D1.
 - El botón quedó con 23 clases, y se va a repetir en hero, tarjetas y planes:
   candidato a `@utility` (D4) antes de copiarlo.
+- La IA añadió `ontouchstart=""` en el `<body>` (truco para que iOS Safari
+  active `:active` al tocar). Lo quité: no lo sabría explicar en la revisión,
+  y solo se pierde el «aplastado» al tocar en iPhone.
+
+## 4 · T2b · Utilidad `btn-pegatina` (D4) (2026-10-11)
+
+### Prompt
+
+"Extrae la forma y el efecto «se aplasta» del botón a `@utility
+btn-pegatina`; el color se queda en el HTML. Que se vea y se comporte igual
+que en T2."
+
+### Qué me dio
+
+Una utilidad en CSS plano anidado, sin `@apply`: borde, sombra dura,
+transición, `:hover` dentro de `@media (hover: hover)`, `:active` y
+`:focus-visible`, con los `translate` dentro de
+`@media (prefers-reduced-motion: no-preference)` (lo mismo que hace
+`motion-safe:`). Todo con tokens (`var(--color-espresso-900)`,
+`var(--shadow-pegatina)`…).
+
+### Qué corregí y por qué
+
+- Decidí qué va dentro y qué fuera: dentro, la forma y el efecto, que se
+  repiten igual en todas partes; fuera, el color (el secundario «Ver cafés»
+  tendrá otro fondo) y el padding (cada sitio tiene su tamaño). El botón
+  pasó de 19 clases a 5: `btn-pegatina px-3 bg-tomate-500 text-espresso-900
+  md:px-5`.
+- Por qué `@utility` y no `@layer components`: vive en la capa de utilidades,
+  así que un `bg-*` o `px-*` del HTML la puede cambiar sin pelear por
+  especificidad, y admite variantes (`md:btn-pegatina`).
+- La verificación comprobó que no cambiaba nada visible (mismos colores,
+  sombra y desplazamientos que en T2, también con reduced-motion). Solo
+  cambia que ahora la transición anima `box-shadow` y `translate`, no los
+  colores, porque el botón no cambia de color.

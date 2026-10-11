@@ -41,3 +41,43 @@
      la sombra crece 2 px, así la base parece quedarse en su sitio). */
   --shadow-pegatina-lg: 6px 6px 0 var(--color-espresso-900);
 }
+
+/* Botón «pegatina» que se aplasta (brief §Detalle memorable).
+   Se repite en cabecera, hero, tarjetas y planes: forma y efecto viven aquí
+   una sola vez. Fuera quedan el color (el secundario usa otro fondo) y el
+   padding (cada sitio tiene su tamaño). Desplazamientos solo si el usuario
+   no pide menos movimiento; hover solo en dispositivos con puntero. */
+@utility btn-pegatina {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem; /* 44 px: zona cómoda para el dedo */
+  font-family: var(--font-display);
+  font-weight: 700;
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pegatina);
+  transition-property: box-shadow, translate;
+  transition-duration: var(--default-transition-duration);
+  transition-timing-function: var(--default-transition-timing-function);
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: var(--shadow-pegatina-lg);
+      @media (prefers-reduced-motion: no-preference) {
+        translate: -2px -2px; /* sube hacia la luz */
+      }
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 4px 4px; /* baja hasta tapar su sombra: se aplasta */
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: 4px;
+  }
+}

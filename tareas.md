@@ -36,11 +36,25 @@ el efecto «se aplasta». En móvil, menú en `<details>`/`<summary>` (D1); desd
 - C2.6 Botón «Suscríbete» tomate con texto *espresso*, `border-2` y la sombra dura; `motion-safe:` en su `hover:`/`active:` `translate-*` — `check-estatico` + `sonda-pagina` (contraste) — brief §Detalle memorable
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: 3 «>12 utilidades» (summary, ul, botón), `<ul>` fuera del `<details>` (el summary anuncia «expandido» sin contenido dentro), Safari/VoiceOver sin probar · botón 5,37:1, espresso/menta 10,46:1 · Lighthouse 100/100/100 · DM Sans ya carga sola
 
+## T2b · Utilidad `btn-pegatina` (D4) — ✅
+**Qué:** extraer la forma y el efecto «se aplasta» del botón a una utilidad
+propia con `@utility btn-pegatina` en `src/style.css`, para reutilizarla en
+hero, tarjetas y planes. El color de fondo se queda en el HTML (el botón
+secundario «Ver cafés» tendrá otro). Quitar `ontouchstart=""` del `<body>`
+(decisión del alumno: no lo sabría explicar).
+**Depende de:** T1, T2
+**Criterios:**
+- C2b.1 `src/style.css` tiene `@utility btn-pegatina` con borde de 2 px espresso, `--shadow-pegatina`, transición, hover (sombra `-lg` y subir 2 px), active (sin sombra y bajar 4 px) y foco visible; los desplazamientos solo dentro de `prefers-reduced-motion: no-preference`; sin colores a pelo (tokens) — leer `src/style.css` — D4, brief §Detalle memorable
+- C2b.2 El botón «Suscríbete» de la cabecera usa `btn-pegatina` y ya no da el aviso de más de 12 utilidades — leer `index.html` + `check-estatico` — D4, skill `tailwind-clases-limpias`
+- C2b.3 Mismo resultado que en T2 (sin regresión visual): fondo tomate, texto espresso (≥ 4,5:1), sombra `4px 4px 0`; en hover `translate -2px -2px` y sombra de 6 px; en active `translate 4px 4px` y sin sombra; con reduced-motion, sin `translate` — `browser_hover` / ratón + `browser_evaluate` + `sonda-pagina` — T2 C2.6
+- C2b.4 El `<body>` no tiene `ontouchstart` — leer `index.html` — decisión del alumno
+**Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: 2 «>12 utilidades» esperados (summary, ul), `:active` en iOS sin `ontouchstart` sin probar · botón de 19 a 5 clases, mismo resultado que T2 (5,37:1, hover −2 px / active +4 px, nada con reduced-motion) · Lighthouse 100/100/100 · T1 y T2 sin regresiones
+
 ## T3 · Hero con sello giratorio — ⬜
 **Qué:** `h1`, subtítulo, botón principal «Suscríbete» y secundario «Ver
 cafés», foto, sello SVG «Recién tostado ·» girando sobre la esquina de la foto
 y entrada en cascada.
-**Depende de:** T1, T2 (reutiliza el estilo de botón)
+**Depende de:** T1, T2, T2b (botones con `btn-pegatina`)
 **Criterios:**
 - C3.1 Un solo `h1` en la página, dentro del hero; 2 enlaces/botones y 1 `img` con `alt` no vacío — `sonda-pagina` (encabezados, imágenes) — O1, O4
 - C3.2 A 360 texto e imagen apilados (`top` distinto); a 1440 lado a lado (`left` distinto, `top` parecido) — `browser_evaluate` + capturas — O4
@@ -129,6 +143,7 @@ de accesibilidad y repaso final de todos los criterios del lab.
 - C10.3 Bitácora con ≥ 3 `### Prompt` / `### Qué me dio` / `### Qué corregí y por qué` — contar en `README.md` — O9
 - C10.4 Lighthouse Accesibilidad ≥ 90 y nota apuntada en el README — puerta 4 de `verify-task` + leer README — O8
 - C10.5 Si el README trae clases de ejemplo, `@source not "../README.md";` en el CSS — leer ficheros — CLAUDE.md
+- C10.7 README explica el D4: cuándo crear una utilidad en CSS y cuándo repetir clases, y por qué abusar de `@apply` es mala práctica; y las pegas de accesibilidad de la hamburguesa (D1) — leer `README.md` — D4, D1
 - C10.6 Repaso de `criterios-lab.md`: O1–O9 PASA en la página completa — `verify-task` sobre el conjunto — O1–O9
 **Verificación:** —
 
@@ -149,6 +164,7 @@ de accesibilidad y repaso final de todos los criterios del lab.
 | P6 Bento | T6 |
 | P7 Animaciones con `motion-safe:` | T2, T3, T5 |
 | D1 Hamburguesa sin JS | T2 |
+| D4 Utilidades propias (`@utility`) | T2b (+ explicación en el README: T10) |
 | brief §Secciones (8) | T2 cabecera · T3 hero · T4 pasos · T5 cafés · T6 glosario · T7 planes · T8 FAQ · T9 pie |
 | brief §Móvil | T2, T6, T7 |
 | brief §Contenido | T4, T5, T8 |
