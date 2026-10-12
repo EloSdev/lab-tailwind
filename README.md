@@ -233,7 +233,7 @@ comprobado abriendo la página de la foto:
 | Etiopía | pariwat pannium | [Granos de café con taza blanca](https://unsplash.com/photos/coffee-beans-with-white-cup-S8daAB_nJSg) |
 | Colombia | Carlos Felipe Ramírez Mesa | [Mano con cerezas de café](https://unsplash.com/photos/a-person-holding-a-bunch-of-berries-Ni7Cfu8AIMI) |
 | Kenia | Alin Luna | [Granos en cuenco blanco](https://unsplash.com/photos/brown-coffee-beans-on-white-ceramic-bowl-lGl3spVIU0g) |
-| Guatemala | Gerson Cifuentes | [Cerezas de café en la rama](https://unsplash.com/photos/shallow-focus-photography-of-coffee-bean-W1VqcpcnSHk) |
+| Guatemala | Gerson Cifuentes | [Cerezas de café en la rama](https://unsplash.com/photos/shallow-focus-photography-of-coffee-bean-W1VqcpcnSHk) (recortada: la mitad izquierda, sin el desenfoque claro del primer plano) |
 | Brasil | Tina Guina | [Saco de granos de café](https://unsplash.com/photos/shallow-focus-photography-of-coffee-beans-in-sack-obV_LM0KjxY) |
 | Ruanda | Eiliv Aceron | [Café de filtro](https://unsplash.com/photos/person-pouring-water-in-clear-glass-jar-XP5zW2ngk9w) |
 
@@ -914,3 +914,32 @@ contra el código y el navegador.
   revisión del lab me pueden preguntar justo eso.
 - Borré `bitacora.md` tras comprobar que sus 19 entradas estaban en el
   README sin perder ni una línea: dos copias acabarían siendo distintas.
+
+## 21 · Corrección visual: la foto de Guatemala (2026-10-12)
+
+### Prompt
+
+"La foto del café Guatemala, la parte derecha se ve como si tuviese un
+reflejo del sol. El resto de la foto es buena, con frutos del café de
+colores, pero esa parte translúcida arruina la foto."
+
+### Qué me dio
+
+Vio la causa: la «mancha» era el desenfoque de unas hojas en primer plano, y
+nuestra versión era un recorte 4:3 del centro del original (3:2), justo donde
+está. Propuso recortar la misma foto en vez de buscar otra (la Licencia de
+Unsplash permite modificarla y el crédito no cambia).
+
+### Qué corregí y por qué
+
+- **Recortar desde el original, no desde nuestra copia**: recortar la
+  versión de 600px habría dejado unos 360px que había que ampliar, y se
+  vería borrosa. Se descargó el original de 6000×4000 y se recortó la mitad
+  izquierda en 4:3 (los dos racimos con cerezas de colores). Después se
+  generaron otra vez las versiones de 600 y 400px del `srcset`. La grande
+  bajó de 38 a 21 KB.
+- La verificación comparó la foto anterior y la nueva: queda una zona clara
+  pequeña arriba, que no tapa ningún racimo. El `alt` seguía siendo exacto.
+- En los créditos del README se indica que la foto está recortada.
+- En el mismo cambio entran dos retoques del pie que hizo el alumno a mano:
+  la dirección pasa a Compostela y el copyright a «Tostado en Galicia».
