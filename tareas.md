@@ -194,7 +194,7 @@ que sea».
 - CR4.5 «Sea el café que sea» sustituido por un texto más claro — leer HTML — revisión 9
 **Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · aviso oculto al cargar, visible tras cada «Elegir…» y oculto tras enviar el form (ahora a `#newsletter-form`) · «Para empezar» sin tapar el h3 en 5 anchos · «Más popular» tras el h3 sin cambio visual (misma posición que HEAD) · tarjetas en x=32 como el h2 a 768 · precios a 0 px de diferencia a 1024/1280/1440 · resto de la página igual que HEAD · foco visible (incluido pie tras llegar desde un plan), reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 91 (LCP 3,3 s) · T7, T9, R1, R2 sin regresiones · aviso: al llegar a #newsletter el foco no se mueve, el lector no oye el aviso salvo que lea el bloque
 
-## R5 · FAQ: foco y texto (revisión 5 y 9) — ⬜
+## R5 · FAQ: foco y texto (revisión 5 y 9) — ✅
 **Qué:** el foco de las preguntas, por fuera de la pegatina como en los
 botones; «eliges otro de los seis» → texto que no sugiera que los orígenes
 no cambian.
@@ -203,7 +203,7 @@ no cambian.
 - CR5.1 Con Tab en un `summary`, el outline queda fuera del borde de la pegatina (offset positivo, en el `details` vía `:has(> summary:focus-visible)` o similar) y es visible a 360 y 1440 — `sonda-foco` + capturas — revisión 5, O8
 - CR5.2 Las 6 preguntas siguen abriéndose y cerrándose con Enter y Espacio; la flecha gira — `browser_press_key` + `browser_evaluate` — P4, T8
 - CR5.3 El texto de «¿Y si no me gusta…?» ya no dice «otro de los seis» — leer HTML — revisión 9
-**Verificación:** —
+**Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · con Tab, el `details` pinta outline espresso a 4px (fuera de borde y sombra) en las 6 preguntas a 360 y 1440, sin recortes; con clic no aparece · Enter y Espacio abren/cierran las 6, fondo menta y flecha 180deg · «otro de la nueva tanda» · 33/33 con foco visible, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · resto igual que HEAD (491 elementos) · avisos: `sonda-foco` da falso positivo en el summary (outline transparente); con colores forzados el anillo sale doble
 
 ## R6 · Rendimiento: srcset de las fotos (revisión 10) — ⬜
 **Qué:** versiones más pequeñas de la foto del hero y de las 6 de tarjetas, con

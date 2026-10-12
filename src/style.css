@@ -236,15 +236,22 @@
   border-radius: var(--radius-xl);
   background-color: var(--color-espresso-50);
   box-shadow: var(--shadow-pegatina);
+
+  /* Foco por fuera de la pegatina, como en los botones (btn-pegatina): lo
+     dibuja el <details> cuando su <summary> tiene el foco del teclado. */
+  &:has(> summary:focus-visible) {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: 4px;
+  }
 }
 
 /* El <summary> entero es la zona clicable (≥ 44 px de alto).
    - Sin el triángulo por defecto (list-style y ::-webkit-details-marker).
    - Hover/active: oscurece un 8 % el fondo que haya debajo (espresso-50
      cerrada, menta abierta), así sirve en los dos estados.
-   - Foco: el borde de la pegatina está pegado al summary, así que un
-     outline hacia fuera caería encima del borde y no se vería; va hacia
-     dentro (offset -6px: 4 px de hueco tras los 2 px del propio outline). */
+   - Foco: lo pinta faq-item por fuera. El del summary queda transparente
+     (no «none»): así no se ve doble, pero en modo de alto contraste de
+     Windows, que ignora los colores, sigue apareciendo. */
 @utility faq-pregunta {
   display: flex;
   align-items: center;
@@ -275,8 +282,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-espresso-900);
-    outline-offset: -6px;
+    outline: 2px solid transparent;
   }
 }
 

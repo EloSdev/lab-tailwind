@@ -577,3 +577,33 @@ para compensar los 24px que sobresale. También lo hizo el agente principal.
 - Aviso de la verificación, sin arreglar: al llegar a `#newsletter` el foco
   no se mueve, así que con lector de pantalla el aviso solo se oye si se lee
   el bloque. Sin JS no hay forma limpia de anunciarlo.
+
+## 18 · R5 · FAQ: foco y texto (2026-10-12)
+
+### Prompt
+
+"El foco de las preguntas, por fuera de la pegatina como en los botones
+(en el `details`, con `:has(> summary:focus-visible)`). Y cambia «eliges
+otro de los seis», que da a entender que los cafés no cambian."
+
+### Qué me dio
+
+`faq-item` pinta el outline con `&:has(> summary:focus-visible)` a 4px por
+fuera (justo lo que mide la sombra, así no se pisan) y el `summary` deja el
+suyo transparente. El texto pasa a «eliges otro de la nueva tanda». También
+lo hizo el agente principal.
+
+### Qué corregí y por qué
+
+- **Transparente, no `none`**: quitar el outline del `summary` con `none`
+  haría que en el modo de alto contraste de Windows (que ignora los
+  colores pero respeta un outline transparente) no se viera ningún foco.
+  Además, `check-estatico` avisa de cualquier `outline: none`.
+- **La sonda no sirve aquí tal cual**: `sonda-foco` mide el elemento
+  enfocado, y ahora el anillo visible es de su padre. Se lo dije al
+  verificador antes de empezar: midió el outline del `details` aparte y lo
+  miró en capturas. La sonda daba `visible: true` en el `summary` por un
+  outline transparente: un falso positivo.
+- Aviso aceptado: con colores forzados se ven los dos anillos (el del
+  `summary` y el del `details`). El foco no se pierde, que era lo
+  importante.
