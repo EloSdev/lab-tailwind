@@ -3,6 +3,102 @@
 Laboratorio final del módulo 1 (maquetación): landing de una sola página
 hecha con HTML semántico, Tailwind CSS v4 y Vite, sin frameworks JS.
 
+## Cómo se ha desarrollado
+
+La web se ha hecho con **Claude Code** (el asistente de programación de
+Anthropic en la terminal), pero no con un único «hazme una landing». El repo
+del curso tiene una configuración propia (un *harness*) que reparte el
+trabajo en fases, cada una con su herramienta, y que **obliga a demostrar con
+pruebas que cada parte funciona** antes de pasar a la siguiente. Esa
+configuración vive en el repo del módulo y no se incluye aquí; lo que queda
+en este repo son sus dos productos: [`brief.md`](brief.md) y
+[`tareas.md`](tareas.md).
+
+### La configuración
+
+- **`CLAUDE.md`, las reglas del proyecto.** Claude lo lee al empezar cada
+  sesión:
+  - Es Tailwind v4, no v3: nada de `tailwind.config.js`; los tokens van en
+    `@theme`.
+  - Nada de colores «a pelo».
+  - `motion-safe:` en todo lo que se mueve.
+  - Las fuentes, con `@fontsource-variable`.
+  - Nada está terminado sin su informe de verificación.
+- **Skills**: instrucciones especializadas que Claude carga cuando la tarea
+  lo pide.
+  - `brief-grill`: la entrevista inicial de diseño.
+  - `plan-tasks`: divide el proyecto en tareas con criterios comprobables.
+  - `verify-task`: la verificación de cada tarea.
+  - `tailwind-clases-limpias`: las reglas de Lemoncode para no hacer
+    «churros» de clases.
+  - `frontend-design`, `tailwind-design-system` y `ux-copy`: para maquetar.
+  - `design-critique` y `accessibility-review`: para revisar.
+- **Agentes** (subagentes con un papel y herramientas propias):
+  - `tailwind-html` maqueta en HTML + Tailwind v4.
+  - `design-reviewer` revisa el diseño contra el brief y no toca el código.
+  - Cada verificación la hace un subagente aparte, que no ha escrito el
+    código: quien lo escribe tiende a ver lo que quería hacer, no lo que hay.
+- **Navegador real**: el servidor MCP de **Playwright** deja a Claude abrir
+  la página, cambiar el ancho a 360/768/1440 px, recorrerla con el
+  tabulador, emular «movimiento reducido» y hacer capturas. Lighthouse mide
+  accesibilidad, buenas prácticas, SEO y rendimiento.
+- **Hooks**: guardas automáticas que no dependen de que Claude «se acuerde».
+  - Una bloquea las acciones irrecuperables (`git reset --hard`,
+    `push --force`, borrar carpetas del curso o `.git`).
+  - Otra, al terminar cada respuesta, compila el proyecto y pasa la
+    comprobación estática si hay cambios sin commit; si algo falla, Claude
+    no puede dar el trabajo por terminado.
+  - Esta última se añadió a mitad del proyecto, en una revisión del
+    harness. El motivo: la IA había llegado a afirmar que había hecho algo
+    que no había hecho.
+
+### El flujo
+
+```
+1 Brief ──► 2 Plan ──► 3 Construir T1 ► verificar ► ✅ ► T2 … ──► 4 Revisión ──► 5 Entrega
+(brief.md)  (tareas.md)          └── ❌: arreglar y volver a verificar ──┘   de diseño     (README)
+```
+
+1. **Brief** (skill `brief-grill`). Claude me entrevistó con una pregunta
+   cada vez, siempre con opciones y una recomendación: público, secciones,
+   móvil, contenido, personalidad, tres direcciones visuales y movimiento.
+   Yo decidía. El resultado es [`brief.md`](brief.md), la referencia de
+   diseño de todo lo demás. Por eso la web es «Pegatina pop» y no la
+   plantilla de café de siempre.
+2. **Plan** (skill `plan-tasks`). El brief y los obligatorios del enunciado
+   se convirtieron en [`tareas.md`](tareas.md): tareas pequeñas y ordenadas
+   (base y tokens → cabecera → hero → cada sección → README).
+   - Cada tarea tiene **criterios comprobables y cómo se mide cada uno**, por
+     ejemplo: «6 `article` en `#cafes`; 1/2/3 columnas a 360/768/1440».
+   - Una tabla de cobertura asegura que cada obligatorio, opcional y desafío
+     tiene su tarea.
+3. **Construcción, tarea a tarea.** Cada tarea se maquetaba y se
+   verificaba con `verify-task` **antes de empezar la siguiente**. Las
+   comprobaciones de esa verificación:
+   - el build;
+   - la comprobación estática (Tailwind v4, tokens, `motion-safe:`, foco…);
+   - el navegador real a 3 anchos (scroll horizontal, contraste medido de
+     cada texto, foco visible con el tabulador, movimiento reducido);
+   - Lighthouse;
+   - los criterios de la tarea, uno a uno;
+   - que no se hubiera roto ninguna tarea anterior.
+
+   El veredicto (PASA / FALLA, con evidencias) queda apuntado en
+   `tareas.md`. Cada tarea que pasaba era un commit.
+4. **Revisión de diseño** (agente `design-reviewer`). Con todo construido,
+   revisó la web contra el brief con una pregunta clave: ¿podría ser la web
+   de cualquier otro sitio? Sacó 10 puntos y elegí arreglarlos todos. Entraron
+   en el plan como tareas nuevas (**R1–R6**), con sus criterios y su
+   verificación, igual que las demás.
+5. **Entrega** (T10). Este README, las capturas y una verificación final de
+   la página entera contra los obligatorios del enunciado.
+
+En total, 17 tareas (T1–T10, T2b y R1–R6), todas verificadas. Hasta R1 las
+maquetó el agente `tailwind-html`. Las últimas (R2–R6 y T10), más pequeñas,
+las hizo directamente Claude, y pasaron por la misma verificación. Mientras
+tanto, la **bitácora de IA** se iba escribiendo tarea a tarea; al final de
+este README quedan cinco ejemplos.
+
 ## Tema
 
 **Tueste** es un tostadero ficticio que vende café de especialidad por

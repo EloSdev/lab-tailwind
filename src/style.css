@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
-/* Los .md del proyecto citan clases de ejemplo: que no ensucien el CSS. */
+/* Los .md del proyecto citan clases de ejemplo: que no ensucien el CSS.
+   El LICENSE (solo en el repo de GitHub) tampoco: su texto tiene palabras
+   como «contents» que Tailwind convertía en clases sin uso. */
 @source not "../README.md";
 @source not "../brief.md";
 @source not "../tareas.md";
+@source not "../LICENSE";
 
 @theme {
   /* Paleta «Pegatina pop» (brief §Dirección visual).
