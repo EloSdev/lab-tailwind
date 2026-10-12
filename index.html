@@ -78,8 +78,13 @@
         <!-- relative: ancla del sello (arriba a la derecha) y de la pegatina
              «Tostado el lunes» (abajo a la izquierda, la esquina contraria). -->
         <div class="relative">
+          <!-- srcset: 400 o 800 px de ancho; sizes, lo que mide su hueco
+               (media columna desde md, con tope en 72rem; ancho entero en
+               móvil). El navegador elige según hueco y densidad de pantalla. -->
           <img
             src="/img/granos-tostados.webp"
+            srcset="/img/granos-tostados-400.webp 400w, /img/granos-tostados.webp 800w"
+            sizes="(min-width: 72rem) 32.5rem, (min-width: 48rem) calc(50vw - 3.5rem), calc(100vw - 2rem)"
             alt="Granos de café recién tostados, de varios tonos de marrón, cubriendo toda la imagen vistos desde arriba"
             width="800"
             height="600"
@@ -192,12 +197,14 @@
           (unas 30 tazas) y te la mandamos en grano o molida para tu cafetera.
         </p>
 
-        <!-- role="list": Safari no anuncia como lista un <ul> sin viñetas. -->
+        <!-- role="list": Safari no anuncia como lista un <ul> sin viñetas.
+             Fotos con srcset de 400 y 600 px; sizes = ancho de la columna
+             (1, 2 o 3) menos el padding de la tarjeta y los bordes (2,5rem). -->
         <ul role="list" class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-etiopia.webp" alt="Taza blanca volcada sobre un montón de granos de café tostados" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-etiopia.webp" srcset="/img/cafe-etiopia-400.webp 400w, /img/cafe-etiopia.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Taza blanca volcada sobre un montón de granos de café tostados" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 -rotate-3 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
@@ -224,7 +231,7 @@
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-colombia.webp" alt="Mano recogiendo cerezas de café rojas y maduras de una rama del cafeto" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-colombia.webp" srcset="/img/cafe-colombia-400.webp 400w, /img/cafe-colombia.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Mano recogiendo cerezas de café rojas y maduras de una rama del cafeto" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
@@ -251,7 +258,7 @@
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-kenia.webp" alt="Granos de café tostados dentro de un cuenco blanco, vistos de cerca desde arriba" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-kenia.webp" srcset="/img/cafe-kenia-400.webp 400w, /img/cafe-kenia.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Granos de café tostados dentro de un cuenco blanco, vistos de cerca desde arriba" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 -rotate-2 bg-menta"><span class="sr-only">Proceso: </span>Lavado</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
@@ -278,7 +285,7 @@
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-guatemala.webp" alt="Rama de cafeto con cerezas verdes, amarillas y rojas cubiertas de gotas de agua" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-guatemala.webp" srcset="/img/cafe-guatemala-400.webp 400w, /img/cafe-guatemala.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Rama de cafeto con cerezas verdes, amarillas y rojas cubiertas de gotas de agua" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 rotate-3 bg-crema"><span class="sr-only">Proceso: </span>Honey</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
@@ -305,7 +312,7 @@
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-brasil.webp" alt="Saco de arpillera abierto y lleno de granos de café tostados sobre fondo negro" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-brasil.webp" srcset="/img/cafe-brasil-400.webp 400w, /img/cafe-brasil.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Saco de arpillera abierto y lleno de granos de café tostados sobre fondo negro" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 -rotate-3 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">
@@ -332,7 +339,7 @@
           <li>
             <article class="cafe-tarjeta flex h-full flex-col bg-espresso-50">
               <div class="relative overflow-hidden border-2 border-espresso-900 rounded-lg">
-                <img src="/img/cafe-ruanda.webp" alt="Agua cayendo desde un hervidor sobre el filtro de papel de una cafetera de vidrio, con un cuenco de granos delante" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
+                <img src="/img/cafe-ruanda.webp" srcset="/img/cafe-ruanda-400.webp 400w, /img/cafe-ruanda.webp 600w" sizes="(min-width: 72rem) 19rem, (min-width: 64rem) calc((100vw - 8rem) / 3 - 2.5rem), (min-width: 48rem) calc((100vw - 6rem) / 2 - 2.5rem), (min-width: 40rem) calc((100vw - 4rem) / 2 - 2.5rem), calc(100vw - 4.5rem)" alt="Agua cayendo desde un hervidor sobre el filtro de papel de una cafetera de vidrio, con un cuenco de granos delante" width="600" height="450" loading="lazy" decoding="async" class="aspect-4/3 w-full object-cover" />
                 <p class="pegatina absolute top-3 left-3 rotate-2 bg-tomate-500"><span class="sr-only">Proceso: </span>Natural</p>
               </div>
               <h3 class="mt-5 font-display text-2xl leading-tight font-bold">

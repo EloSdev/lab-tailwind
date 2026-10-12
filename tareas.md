@@ -205,15 +205,15 @@ no cambian.
 - CR5.3 El texto de «¿Y si no me gusta…?» ya no dice «otro de los seis» — leer HTML — revisión 9
 **Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · con Tab, el `details` pinta outline espresso a 4px (fuera de borde y sombra) en las 6 preguntas a 360 y 1440, sin recortes; con clic no aparece · Enter y Espacio abren/cierran las 6, fondo menta y flecha 180deg · «otro de la nueva tanda» · 33/33 con foco visible, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 92 · resto igual que HEAD (491 elementos) · avisos: `sonda-foco` da falso positivo en el summary (outline transparente); con colores forzados el anillo sale doble
 
-## R6 · Rendimiento: srcset de las fotos (revisión 10) — ⬜
+## R6 · Rendimiento: srcset de las fotos (revisión 10) — ✅
 **Qué:** versiones más pequeñas de la foto del hero y de las 6 de tarjetas, con
 `srcset` + `sizes`, para que el móvil descargue menos.
 **Depende de:** T3, T5
 **Criterios:**
 - CR6.1 La foto del hero y las 6 de tarjetas tienen `srcset` con al menos 2 anchos y `sizes` coherente con su hueco; los ficheros existen y responden 200 — leer HTML + `browser_network_requests` — revisión 10, D7
-- CR6.2 A 360 el navegador descarga la versión pequeña (`currentSrc`) y a 1440 la grande; ninguna imagen se deforma — `browser_evaluate` + `sonda-pagina` — O5
+- CR6.2 A 360 el navegador descarga la versión pequeña (`currentSrc`) y a 1440 la grande; ninguna imagen se deforma — `browser_evaluate` + `sonda-pagina` — O5 *(Corregido el 2026-10-12: «a 1440 la grande» vale para el hero, cuyo hueco mide 520px. Las fotos de tarjeta miden ~304px a 1440 (y ~330 a 768), así que con densidad 1 lo correcto es la de 400; la de 600 se pide con densidad ≥ 1,5 o con columna única entre 480 y 640px. Se comprueba que cada `currentSrc` es el menor ancho ≥ hueco × densidad.)*
 - CR6.3 Lighthouse móvil: Rendimiento ≥ 92 (antes 92) y LCP no peor que 3,3 s; a11y/BP/SEO siguen a 100 — puerta 4 — D7
-**Verificación:** —
+**Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · 7 `-400.webp` de 400×300, todas 200 · 84 combinaciones (7 imágenes × 6 anchos × DPR 1 y 2) eligen el menor candidato ≥ hueco × DPR · `sizes` nunca se queda corto (0 a +15px, por la barra de scroll) en 22 anchos · Lighthouse 3 pasadas: Rendimiento 92/92/92, LCP 3,30/3,23/3,23 s, a11y/BP/SEO 100 · T3 y T5 sin regresiones · nota: el móvil de Lighthouse (412px, DPR 1,75) sigue bajando las fotos grandes; el ahorro es para DPR < 1,5
 
 ## T10 · README, capturas y verificación del conjunto — ⬜
 **Qué:** `README.md` con tema, cómo arrancar, opción de Tailwind (Vite) y por

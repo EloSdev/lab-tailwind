@@ -607,3 +607,31 @@ lo hizo el agente principal.
 - Aviso aceptado: con colores forzados se ven los dos anillos (el del
   `summary` y el del `details`). El foco no se pierde, que era lo
   importante.
+
+## 19 · R6 · srcset de las fotos (2026-10-12)
+
+### Prompt
+
+"Versiones más pequeñas de la foto del hero y de las 6 de tarjetas, con
+`srcset` + `sizes`, para que el móvil descargue menos. Lighthouse no puede
+bajar de 92."
+
+### Qué me dio
+
+7 WebP de 400px de ancho (8–27 KB frente a 27–158 KB), hechas con
+`sharp-cli` vía `npx` en una carpeta temporal, sin añadir nada a
+`package.json`. `srcset` 400w/800w en el hero y 400w/600w en las tarjetas, y
+un `sizes` en `rem`/`vw` calculado a partir del layout: columnas, padding,
+gap y bordes de cada hueco.
+
+### Qué corregí y por qué
+
+- **El criterio, no el código**: CR6.2 decía «a 1440 la grande», pero a 1440
+  cada foto de tarjeta mide ~304px y con densidad 1 lo correcto es la de
+  400. Pedir la grande ahí habría sido pedir que el `sizes` mintiera. Lo
+  corregí con nota fechada antes de verificar: cada foto debe ser la menor
+  que llene su hueco × densidad. Se comprobó en 84 combinaciones.
+- **Lo que no mejora, dicho tal cual**: Lighthouse móvil simula 412px con
+  densidad 1,75, así que sigue bajando las fotos grandes. Rendimiento se
+  queda en 92 y el LCP en ~3,2–3,3 s: no empeora, pero tampoco mejora. El
+  ahorro es real en pantallas de densidad baja, no en la prueba.
