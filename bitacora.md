@@ -545,3 +545,35 @@ de 2 columnas, que ya no dejaba huecos.
   mide solo dos anchos deja sin mirar justo los puntos de ruptura, que es
   donde las rejillas suelen fallar.
 - Coste aceptado: entre 1024 y 1279 el glosario es ~600px más largo.
+
+## 17 · R4 · Planes: elegir plan y empujar el de entrada (2026-10-12)
+
+### Prompt
+
+"Al pulsar un plan, que en la newsletter salga un aviso tipo «¡Buena
+elección!» sin JS (`group-target:`). Pegatina «Para empezar» en Curioso.
+«Más popular» después del `h3`. A 768 las tarjetas alineadas con el título y
+a 1440 los precios a la misma altura. Cambia «Sea el café que sea»."
+
+### Qué me dio
+
+El aviso con `hidden … group-target:block` y `group` en `#newsletter`; las
+dos pegatinas después de su `h3` (son `absolute`, se ven igual); quitar el
+`mx-auto` de la lista para alinearla con el `h2`; `lg:pt-14` en el destacado
+para compensar los 24px que sobresale. También lo hizo el agente principal.
+
+### Qué corregí y por qué
+
+- **Un fallo que el criterio no veía**: el formulario tenía
+  `action="#newsletter"`, así que al enviar el correo `#newsletter` volvía a
+  ser `:target` y salía «¡Buena elección!» sin haber elegido nada. El form
+  pasa a apuntar a su propio id (`#newsletter-form`).
+- **Medir, no suponer**: con `lg:pt-14` creía que los precios ya cuadraban,
+  pero al medir Curioso quedaba 24px más arriba: su frase cabía en una línea
+  y las otras en dos. `lg:min-h-12` en las tres frases (dos líneas siempre)
+  y 0px de diferencia a 1024, 1280 y 1440.
+- Cambié dos veces el texto de Curioso: «La bolsa, a 12,90 €» repetía el
+  precio de justo encima. Quedó «unas 30 tazas del café que elijas».
+- Aviso de la verificación, sin arreglar: al llegar a `#newsletter` el foco
+  no se mueve, así que con lector de pantalla el aviso solo se oye si se lee
+  el bloque. Sin JS no hay forma limpia de anunciarlo.

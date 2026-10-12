@@ -180,7 +180,7 @@ sin cajas medio vacías.
 **Verificación:** 2026-10-11 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · espacio libre máx. 3,69rem a 1440 (Cuerpo) y 0 a 768 · rejilla 4×3 / 2×5 / 1 col sin huecos · 6 barras con «cuerpo N de 5» en el árbol de accesibilidad · sombra tomate calculada · contraste mín. 5,37:1, sin scroll horizontal, foco 13/13, reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 91 (LCP 3,3 s, igual) · T5, T6 y R1 sin regresiones; resto de la página igual que HEAD · aviso: a 1024 Notas y Cuerpo quedaban con ~6,5rem libres → arreglado (CR3.5)
 **Verificación (arreglo, CR3.5):** 2026-10-11 · ✅ PASA · mosaico de 4 columnas de `lg:` a `xl:` · espacio libre máx.: 0 a 768 y 1024 (2×5), 1,5rem a 1279, 3,69rem a 1280 y 1440 (4×3), 0 huecos en todos · resto de la página idéntico a HEAD en 6 anchos · Lighthouse a11y/BP/SEO 100, Rendimiento 91 (LCP 3,3 s)
 
-## R4 · Planes: elegir plan y empujar el de entrada (revisión 2, 3a, 8 y 9) — ⬜
+## R4 · Planes: elegir plan y empujar el de entrada (revisión 2, 3a, 8 y 9) — ✅
 **Qué:** aviso sin JS en `#newsletter` cuando se llega desde un plan; pegatina
 «Para empezar» en Curioso; «Más popular» después del `h3`; tarjetas
 alineadas con el título a 768; precios alineados a 1440; retocar «Sea el café
@@ -192,7 +192,7 @@ que sea».
 - CR4.3 En el DOM, «Más popular» va después del `h3` de Mañanero (sin cambio visual) — leer HTML + captura — revisión 8, O8
 - CR4.4 A 768 el borde izquierdo de las tarjetas coincide con el del `h2`; a 1440 los 3 precios están a la misma altura (±2px) — `browser_evaluate` — revisión 8
 - CR4.5 «Sea el café que sea» sustituido por un texto más claro — leer HTML — revisión 9
-**Verificación:** —
+**Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · aviso oculto al cargar, visible tras cada «Elegir…» y oculto tras enviar el form (ahora a `#newsletter-form`) · «Para empezar» sin tapar el h3 en 5 anchos · «Más popular» tras el h3 sin cambio visual (misma posición que HEAD) · tarjetas en x=32 como el h2 a 768 · precios a 0 px de diferencia a 1024/1280/1440 · resto de la página igual que HEAD · foco visible (incluido pie tras llegar desde un plan), reduced motion sin animaciones · Lighthouse a11y/BP/SEO 100, Rendimiento 91 (LCP 3,3 s) · T7, T9, R1, R2 sin regresiones · aviso: al llegar a #newsletter el foco no se mueve, el lector no oye el aviso salvo que lea el bloque
 
 ## R5 · FAQ: foco y texto (revisión 5 y 9) — ⬜
 **Qué:** el foco de las preguntas, por fuera de la pegatina como en los
