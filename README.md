@@ -9,8 +9,8 @@ La web se ha hecho con **Claude Code** (el asistente de programación de
 Anthropic en la terminal), pero no con un único «hazme una landing». El repo
 de partida tiene una configuración propia (un *harness*) que reparte el
 trabajo en fases, cada una con su herramienta, y que **obliga a demostrar con
-pruebas que cada parte funciona** antes de pasar a la siguiente. Esa
-configuración vive en el repo del módulo y no se incluye aquí;en este repo 
+pruebas que cada parte funciona** antes de pasar a la siguiente. 
+Esa configuración vive en el repo del módulo y no se incluye aquí. En este repo 
 se incluyen sus dos productos: [`brief.md`](brief.md) y
 [`tareas.md`](tareas.md).
 
