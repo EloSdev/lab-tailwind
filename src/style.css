@@ -133,6 +133,42 @@
   }
 }
 
+/* Botón ☰ del menú móvil (el <summary> del <details>). Hay uno solo, pero
+   con sus estados pasaba de 12 clases, y ser único no es excusa
+   (tailwind-clases-limpias). Cuadrado de 44 px para el dedo, sin el
+   triángulo nativo del <details>; hover, active y foco como menu-enlace. */
+@utility menu-boton {
+  display: grid;
+  place-items: center;
+  width: calc(var(--spacing) * 11);
+  height: calc(var(--spacing) * 11);
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
+  list-style-type: none;
+  cursor: pointer;
+  border: 2px solid var(--color-espresso-900);
+  border-radius: var(--radius-lg);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-menta);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-menta);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-espresso-900);
+    outline-offset: 2px;
+  }
+}
+
 /* Forma de pegatina para cajas que no se pulsan (pasos de «Cómo funciona»,
    glosario y planes): borde, sombra dura y esquinas, sin el efecto de
    aplastar. El layout y el color de fondo se quedan en el HTML.
