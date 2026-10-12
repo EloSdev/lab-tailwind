@@ -247,9 +247,8 @@ línea.
 # 🤖 Bitácora de IA
 
 Cinco ejemplos elegidos entre las entradas que se fueron escribiendo tarea a
-tarea. Las 21 anteriores a la última siguen en el historial de git
-(`git show 673dd73:maquetacion_tueste/README.md`). Lo interesante no es lo
-que la IA hizo bien, sino **lo que hubo que corregir**.
+tarea. 
+Lo interesante no es lo que la IA hizo bien, sino **lo que hubo que corregir**.
 
 **Herramienta:** Claude Code (Claude Opus) con las skills y agentes del repo:
 
