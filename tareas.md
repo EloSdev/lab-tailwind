@@ -215,7 +215,7 @@ no cambian.
 - CR6.3 Lighthouse móvil: Rendimiento ≥ 92 (antes 92) y LCP no peor que 3,3 s; a11y/BP/SEO siguen a 100 — puerta 4 — D7
 **Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · 7 `-400.webp` de 400×300, todas 200 · 84 combinaciones (7 imágenes × 6 anchos × DPR 1 y 2) eligen el menor candidato ≥ hueco × DPR · `sizes` nunca se queda corto (0 a +15px, por la barra de scroll) en 22 anchos · Lighthouse 3 pasadas: Rendimiento 92/92/92, LCP 3,30/3,23/3,23 s, a11y/BP/SEO 100 · T3 y T5 sin regresiones · nota: el móvil de Lighthouse (412px, DPR 1,75) sigue bajando las fotos grandes; el ahorro es para DPR < 1,5
 
-## T10 · README, capturas y verificación del conjunto — ⬜
+## T10 · README, capturas y verificación del conjunto — ✅
 **Qué:** `README.md` con tema, cómo arrancar, opción de Tailwind (Vite) y por
 qué, capturas móvil/escritorio, checklist O/P/D y bitácora de IA; Lighthouse
 de accesibilidad y repaso final de todos los criterios del lab.
@@ -229,7 +229,7 @@ de accesibilidad y repaso final de todos los criterios del lab.
 - C10.7 README explica el D4: cuándo crear una utilidad en CSS y cuándo repetir clases, y por qué abusar de `@apply` es mala práctica; y las pegas de accesibilidad de la hamburguesa (D1) — leer `README.md` — D4, D1
 - C10.8 Créditos de imágenes en el README: foto del hero de Łukasz Rawa (https://unsplash.com/@lukasz_rawa · https://unsplash.com/photos/brown-coffee-beans-on-black-surface-fmc-tFMMiBs, Unsplash License) y las que se añadan en T5 — leer `README.md` — brief §Contenido
 - C10.6 Repaso de `criterios-lab.md`: O1–O9 PASA en la página completa — `verify-task` sobre el conjunto — O1–O9
-**Verificación:** —
+**Verificación:** 2026-10-12 · ✅ PASA · 0 fallos, avisos: los 2 «>12 utilidades» de siempre · README con tema, arranque, Tailwind (Vite) y por qué, capturas 360/1440 actuales, checklist O/P/D comprobado contra el código, D1 (comprobado a 360: no cierra con Escape, clic fuera ni enlace) y D4, créditos de las 7 fotos · bitácora: 19 entradas idénticas a `bitacora.md` (borrado: pasó al README) · O1–O9 PASA en la página completa a 360/768/1440 · CSS idéntico al de HEAD · Lighthouse 3 pasadas: a11y/BP/SEO 100, Rendimiento 92/92/92, LCP 3,2–3,3 s · T1–T9 y R1–R6 sin regresiones · tras el informe se corrigieron 3 frases del README que generalizaban de más (5–7 clases por botón, la excepción `pie-campo`, la flecha de la FAQ en P7)
 
 ## Cobertura
 | Requisito | Tareas |
